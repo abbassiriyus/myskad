@@ -3,6 +3,9 @@ import NavbarHome from './NavbarHome'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import s from "../styles/Home.module.css"
 import { Pagination, Navigation } from 'swiper/modules';
+import { MdAddShoppingCart } from "react-icons/md";
+import { FaPlus } from "react-icons/fa6";
+import image1 from "../image/pard.png"
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -30,20 +33,42 @@ export default function index() {
         <SwiperSlide className={s.swiperslide} ><Image src={header_img} /></SwiperSlide>
 
       </Swiper>
-      <main className={s.section}>
+      <main className={s.main}>
         <h4>Категории</h4>
         <div className={s.cards}>
           <div className={s.card}>
-            <div className={s.image} style={{ background: 'url()' }} ></div>
+            <div class={s.img} style={{ background: `url(https://w.forfun.com/fetch/33/338fc5d0f0504a13bd2489a69eb06dfb.jpeg)`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
             <h5 className={s.title}>Смартфоны и гаджеты</h5>
           </div>
-          <div className={s.card}></div>
-          <div className={s.card}></div>
-          <div className={s.card}></div>
-          <div className={s.card}></div>
-          <div className={s.card}></div>
-          <div className={s.card}></div>
-          <div className={s.card}></div>
+          <div className={s.card}>  
+          <div class={s.img} 
+          style={{ background: `url(${'https://png.pngtree.com/thumb_back/fw800/background/20220424/pngtree-on-a-beige-backdrop-there-are-wireless-headphones-in-beige-and-a-closed-notebook-photo-image_36135654.jpg'})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+          <h5 className={s.title}>Смартфоны и гаджеты</h5>
+          </div>
+          <div className={s.card}>  
+          <div class={s.img} style={{ background: `url(${'https://png.pngtree.com/thumb_back/fw800/background/20220424/pngtree-on-a-beige-backdrop-there-are-wireless-headphones-in-beige-and-a-closed-notebook-photo-image_36135654.jpg'})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+          <h5 className={s.title}>Смартфоны и гаджеты</h5>
+          </div>
+          <div className={s.card}>  
+          <div class={s.img} style={{ background: `url(${'https://png.pngtree.com/thumb_back/fw800/background/20220424/pngtree-on-a-beige-backdrop-there-are-wireless-headphones-in-beige-and-a-closed-notebook-photo-image_36135654.jpg'})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+          <h5 className={s.title}>Смартфоны и гаджеты</h5>
+          </div>
+          <div className={s.card}>  
+          <div class={s.img} style={{ background: `url(${'https://png.pngtree.com/thumb_back/fw800/background/20220424/pngtree-on-a-beige-backdrop-there-are-wireless-headphones-in-beige-and-a-closed-notebook-photo-image_36135654.jpg'})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+          <h5 className={s.title}>Смартфоны и гаджеты</h5>
+          </div>
+          <div className={s.card}>  
+          <div class={s.img} style={{ background: `url(${'https://png.pngtree.com/thumb_back/fw800/background/20220424/pngtree-on-a-beige-backdrop-there-are-wireless-headphones-in-beige-and-a-closed-notebook-photo-image_36135654.jpg'})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+          <h5 className={s.title}>Смартфоны и гаджеты</h5>
+          </div>
+          <div className={s.card}>  
+          <div class={s.img} style={{ background: `url(${'https://png.pngtree.com/thumb_back/fw800/background/20220424/pngtree-on-a-beige-backdrop-there-are-wireless-headphones-in-beige-and-a-closed-notebook-photo-image_36135654.jpg'})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+          <h5 className={s.title}>Смартфоны и гаджеты</h5>
+          </div>
+          <div className={s.card}>  
+          <div class={s.img} style={{ background: `url(${'https://png.pngtree.com/thumb_back/fw800/background/20220424/pngtree-on-a-beige-backdrop-there-are-wireless-headphones-in-beige-and-a-closed-notebook-photo-image_36135654.jpg'})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+          <h5 className={s.title}>Смартфоны и гаджеты</h5>
+          </div>
 
         </div>
       </main>
@@ -55,14 +80,14 @@ export default function index() {
             <div className={s.ss}> <h5>Небулайзер Ulaizer Air+ VP-
               D2</h5>
               <h3>3 640 000 сум</h3>
-              <div class={s.karzinka1}><p><i class='bx bx-cart-alt'></i></p><h1>+</h1></div>
+              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
             </div>
           </div>
           <div class={s.card}>   <div class={s.img} style={{ background: 'url(https://api.cabinet.smart-market.uz/uploads/images/8a8386028364c7d0196bb203)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
             <div className={s.ss}>  <h5>Небулайзер Ulaizer Air+ VP-
               D2</h5>
               <h3>3 640 000 сум</h3>
-              <div class={s.karzinka1}><p><i class='bx bx-cart-alt'></i></p><h1>+</h1></div>
+              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
             </div>
           </div>
 
@@ -70,31 +95,133 @@ export default function index() {
             <div className={s.ss}>    <h5>Небулайзер Ulaizer Air+ VP-
               D2</h5>
               <h3>3 640 000 сум</h3>
-              <div class={s.karzinka1}><p><i class='bx bx-cart-alt'></i></p><h1>+</h1></div>
-            </div></div>
+              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
+            </div>
+            </div>
           <div class={s.card}>   <div class={s.img} style={{ background: 'url(https://api.cabinet.smart-market.uz/uploads/images/8a8386028364c7d0196bb203)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
           </div>
             <div className={s.ss}><h5>Небулайзер Ulaizer Air+ VP-
               D2</h5>
               <h3>3 640 000 сум</h3>
-              <div class={s.karzinka1}><p><i class='bx bx-cart-alt'></i></p><h1>+</h1></div>
+              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
             </div>
           </div>
           <div class={s.card}>   <div class={s.img} style={{ background: 'url(https://api.cabinet.smart-market.uz/uploads/images/8a8386028364c7d0196bb203)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
             <div className={s.ss}>  <h5>Небулайзер Ulaizer Air+ VP-
               D2</h5>
               <h3>3 640 000 сум</h3>
-              <div class={s.karzinka1}><p><i class='bx bx-cart-alt'></i></p><h1>+</h1></div>
-            </div></div>
+              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
+            </div>
+            </div>
           <div class={s.card}>   <div class={s.img} style={{ background: 'url(https://api.cabinet.smart-market.uz/uploads/images/8a8386028364c7d0196bb203)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
             <div className={s.ss}> <h5>Небулайзер Ulaizer Air+ VP-
               D2</h5>
               <h3>3 640 000 сум</h3>
-              <div class={s.karzinka1}><p><i class='bx bx-cart-alt'></i></p><h1>+</h1></div>
-            </div></div>
+              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
+            </div>
+            </div>
         </div>
       </main>
+      <main className={s.main2}>
+        <h4>Бестселлеры</h4>
+        <div class={s.cards}>
+          <div class={s.card}>
+            <div class={s.img} style={{ background: 'url(https://api.cabinet.smart-market.uz/uploads/images/8a8386028364c7d0196bb203)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+            <div className={s.ss}> <h5>Небулайзер Ulaizer Air+ VP-
+              D2</h5>
+              <h3>3 640 000 сум</h3>
+              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
+            </div>
+          </div>
+          <div class={s.card}>   <div class={s.img} style={{ background: 'url(https://api.cabinet.smart-market.uz/uploads/images/8a8386028364c7d0196bb203)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+            <div className={s.ss}>  <h5>Небулайзер Ulaizer Air+ VP-
+              D2</h5>
+              <h3>3 640 000 сум</h3>
+              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
+            </div>
+          </div>
 
+          <div class={s.card}>   <div class={s.img} style={{ background: 'url(https://api.cabinet.smart-market.uz/uploads/images/8a8386028364c7d0196bb203)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+            <div className={s.ss}>    <h5>Небулайзер Ulaizer Air+ VP-
+              D2</h5>
+              <h3>3 640 000 сум</h3>
+              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
+            </div>
+            </div>
+          <div class={s.card}>   <div class={s.img} style={{ background: 'url(https://api.cabinet.smart-market.uz/uploads/images/8a8386028364c7d0196bb203)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+          </div>
+            <div className={s.ss}><h5>Небулайзер Ulaizer Air+ VP-
+              D2</h5>
+              <h3>3 640 000 сум</h3>
+              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
+            </div>
+          </div>
+          <div class={s.card}>   <div class={s.img} style={{ background: 'url(https://api.cabinet.smart-market.uz/uploads/images/8a8386028364c7d0196bb203)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+            <div className={s.ss}>  <h5>Небулайзер Ulaizer Air+ VP-
+              D2</h5>
+              <h3>3 640 000 сум</h3>
+              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
+            </div>
+            </div>
+          <div class={s.card}>   <div class={s.img} style={{ background: 'url(https://api.cabinet.smart-market.uz/uploads/images/8a8386028364c7d0196bb203)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+            <div className={s.ss}> <h5>Небулайзер Ulaizer Air+ VP-
+              D2</h5>
+              <h3>3 640 000 сум</h3>
+              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
+            </div>
+            </div>
+        </div>
+      </main>
+      <main className={s.main2}>
+        <h4>Новинки</h4>
+        <div class={s.cards}>
+          <div class={s.card}>
+            <div class={s.img} style={{ background: 'url(https://api.cabinet.smart-market.uz/uploads/images/8a8386028364c7d0196bb203)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+            <div className={s.ss}> <h5>Небулайзер Ulaizer Air+ VP-
+              D2</h5>
+              <h3>3 640 000 сум</h3>
+              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
+            </div>
+          </div>
+          <div class={s.card}>   <div class={s.img} style={{ background: 'url(https://api.cabinet.smart-market.uz/uploads/images/8a8386028364c7d0196bb203)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+            <div className={s.ss}>  <h5>Небулайзер Ulaizer Air+ VP-
+              D2</h5>
+              <h3>3 640 000 сум</h3>
+              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
+            </div>
+          </div>
+
+          <div class={s.card}>   <div class={s.img} style={{ background: 'url(https://api.cabinet.smart-market.uz/uploads/images/8a8386028364c7d0196bb203)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+            <div className={s.ss}>    <h5>Небулайзер Ulaizer Air+ VP-
+              D2</h5>
+              <h3>3 640 000 сум</h3>
+              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
+            </div>
+            </div>
+          <div class={s.card}>   <div class={s.img} style={{ background: 'url(https://api.cabinet.smart-market.uz/uploads/images/8a8386028364c7d0196bb203)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+          </div>
+            <div className={s.ss}><h5>Небулайзер Ulaizer Air+ VP-
+              D2</h5>
+              <h3>3 640 000 сум</h3>
+              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
+            </div>
+          </div>
+          <div class={s.card}>   <div class={s.img} style={{ background: 'url(https://api.cabinet.smart-market.uz/uploads/images/8a8386028364c7d0196bb203)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+            <div className={s.ss}>  <h5>Небулайзер Ulaizer Air+ VP-
+              D2</h5>
+              <h3>3 640 000 сум</h3>
+              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
+            </div>
+            </div>
+          <div class={s.card}>   <div class={s.img} style={{ background: 'url(https://api.cabinet.smart-market.uz/uploads/images/8a8386028364c7d0196bb203)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+            <div className={s.ss}> <h5>Небулайзер Ulaizer Air+ VP-
+              D2</h5>
+              <h3>3 640 000 сум</h3>
+              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
+            </div>
+            </div>
+        </div>
+      </main>
     </div>
   )
 }
