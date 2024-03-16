@@ -4,49 +4,15 @@
     width: 100%;
     max-width: 1400px;
     margin: auto;
+    margin-top: 30px;
 }
 .app_1{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap:20px;
+    margin-top: 20px;
 }
-.telegram{
-    background-color:cyan;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.youtube{
-    background-color:red;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.instagram{
-    background-color:orangered;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.facebook{
-    background-color:orangered;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+.contact span{
+    margin-left: 20px;
 }
