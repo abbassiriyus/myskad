@@ -26,11 +26,10 @@ border-radius: 10px;
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover ;
+  object-fit: cover;
 }
 
-
-@media (max-width:991px) {
+@media (max-width:1201px) {
   .swiperslide{
     height: auto;
     overflow: hidden;
@@ -43,11 +42,30 @@ border-radius: 10px;
   }
 }
 
+@media (max-width:691px) {
+  .swiperslide{
+    height: auto;
+    overflow: hidden;
+    border-radius: 30px; 
+    height: 150px !important;
+  }
+  #swipper{
+    height: 170px !important;
+    /* overflow: visible; */
+  }
+}
+
+
+
+
+
+
 /* main */
 .main{
   width: 90%;
   max-width: 1400px;
   margin: auto;
+  margin-top: 30px;
   padding-bottom: 30px;
 }
 .main h4{
@@ -74,7 +92,9 @@ text-align: center;
 }
 .main .card{
 text-align: center;
-max-width: 600px;
+max-width: 350px;
+margin: auto;
+width: 100%;
 }
 .main .img{
   width: 100%;
@@ -98,10 +118,10 @@ max-width: 600px;
   }
 }
 @media(max-width:450px){
-  .main .cards{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
+  .main .img{
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
   }
 }
 
@@ -145,7 +165,6 @@ display: flex;
 justify-content: center;
 align-items: center;
 font-size: 23px;
-
 position: absolute;
 right: 20px;
 bottom: 20px;
@@ -182,12 +201,30 @@ color: rgb(9, 100, 100);
 }
 
 @media(max-width:491px){
-  .main2 .cards{
+  /* .main2 .cards{
       display: grid;
       grid-template-columns:  1fr;
       gap: 10px;
-  }  
+  }   */
+  .main2 .img{
+    height: 150px;
+    }
+    .main2 .karzinka1{
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 15px;
+      position: absolute;
+      right:15px;
+      bottom: 15px;
+      cursor: pointer;
+      }
 }
+
 .main2 .ss{
   padding: 20px;
 }
@@ -207,6 +244,27 @@ color: rgb(9, 100, 100);
   line-height: 16px;
   letter-spacing: 0em;
   text-align: left;
-  margin-top: 30px;
-  
+  margin-top: 30px; 
+}
+@media(max-width:391px){
+  .main2 .ss{
+    padding: 10px;
+  }
+  .ss h3{
+  font-size: 10px;
+  margin-top: 15px; 
+  margin-bottom: 15px;
+}
+.main2 .karzinka1{
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  position: absolute;
+  right:10px;
+  bottom: 10px;
+  cursor: pointer;
+  }
+  .ss h5{
+    font-size: 10px;
+}
 }

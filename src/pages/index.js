@@ -5,7 +5,8 @@ import s from "../styles/Home.module.css"
 import { Pagination, Navigation } from 'swiper/modules';
 import { MdAddShoppingCart } from "react-icons/md";
 import { FaPlus } from "react-icons/fa6";
-import image1 from "../image/pard.png"
+// import image1 from "../image/pard.png"
+import Footer from './footer';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -20,8 +21,8 @@ export default function index() {
         prevEl: '.swiper-button-prev',
         nextEl: '.swiper-button-next'
       }} id={s.swipper} pagination={true} modules={[Navigation, Pagination]} className="mySwiper">
-        <div class="swiper-button-next" style={{ background: 'white', width: '40px', height: '40px', borderRadius: '50%' }}></div>
-        <div class="swiper-button-prev" style={{ background: 'white', width: '40px', height: '40px', borderRadius: '50%' }}></div>
+        <div class="swiper-button-next" style={{ }}></div>
+        <div class="swiper-button-prev" style={{  }}></div>
         <SwiperSlide className={s.swiperslide}><Image src={header_img} /> </SwiperSlide>
         <SwiperSlide className={s.swiperslide} ><Image src={header_img} /></SwiperSlide>
         <SwiperSlide className={s.swiperslide} ><Image src={header_img} /></SwiperSlide>
@@ -222,6 +223,7 @@ export default function index() {
             </div>
         </div>
       </main>
+      <Footer/>
     </div>
   )
 }

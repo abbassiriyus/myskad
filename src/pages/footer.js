@@ -14,26 +14,30 @@ export default function footer() {
         <div className={s.contact}>
             <h5>Контакты</h5>
             <span>Call-центр</span>
-            <h5>+998-88 164 7777</h5>
+            <h5 style={{marginTop:'10px'}}>+998-88 164 7777</h5>
             <span>Эл. почта</span>
             <p>info@rce.uz</p>
         </div>
         <div className={s.app}>
         <h5>Мы в социальных сетях</h5>
         <div className={s.app_1}>
-           <Image src={img2} alt="" />
+          <div> <Image src={img2} alt="" /></div>
            <Image src={img3} alt="" />
-           <Image src={img4} alt="" />
+          <div> <Image src={img4} alt="" /></div>
            <Image src={img5} alt="" />
         </div>
             </div>
             <div className={s.pay}>
                 <div className={s.payme}>
-                    <Image src={img} alt="" />
+                   <div> <Image src={img} alt="" /></div>
                     <Image src={img1} alt="" />
                 </div>
+                <p>Интренет магазин RadioCity 2010-2024 <br />
+                права защищены
+                </p>
             </div>
         </div>
+        <p className={s.footer_p}>Copyright ©2024 All rights reserved | This web site is made with  by 4a.uz</p>
     </div>
   )
 }
