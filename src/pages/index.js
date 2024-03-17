@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import NavbarHome from './NavbarHome'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import s from "../styles/Home.module.css"
@@ -14,6 +14,18 @@ import 'swiper/css/navigation';
 import Image from 'next/image';
 import header_img from "../image/header_img.png"
 export default function index() {
+  var [data,setData]=useState([])
+function getData() {
+  axios.get(`https://fre.abbas.uz/api/product?limit=10`).then(res=>{
+    setData(res.data)
+  })
+}
+
+
+useEffect(()=>{
+getData()
+},[])
+
   return (
     <div>
       <NavbarHome />
