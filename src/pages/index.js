@@ -13,17 +13,25 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import Image from 'next/image';
 import header_img from "../image/header_img.png"
+import axios from 'axios';
 export default function index() {
   var [data,setData]=useState([])
-function getData() {
-  axios.get(`https://fre.abbas.uz/api/product?limit=10`).then(res=>{
+function getData(id) {
+  axios.get(`https://fre.abbas.uz/api/product?limit=${id}`).then(res=>{
+    res.data.sort((a, b) => {
+      const timestampA = new Date(a.updated);
+      const timestampB = new Date(b.updated);
+      return timestampB - timestampA;
+    });
     setData(res.data)
+  }).catch(err=>{
+console.log(err);
   })
 }
 
 
 useEffect(()=>{
-getData()
+getData(6)
 },[])
 
   return (
@@ -188,51 +196,15 @@ getData()
       <main className={s.main2}>
         <h4>Новинки</h4>
         <div class={s.cards}>
-          <div class={s.card}>
-            <div class={s.img} style={{ background: 'url(https://api.cabinet.smart-market.uz/uploads/images/8a8386028364c7d0196bb203)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
-            <div className={s.ss}> <h5>Небулайзер Ulaizer Air+ VP-
-              D2</h5>
-              <h3>3 640 000 сум</h3>
+      {data.map((item,key)=>{
+            return <div class={s.card} >
+            <div class={s.img} style={(item.images.rows).length>0?{background: `url(${item.images.rows[0].miniature.downloadHref})`, backgroundSize: 'cover', backgroundPosition: 'center'}:{background: 'url(https://t4.ftcdn.net/jpg/04/73/25/49/360_F_473254957_bxG9yf4ly7OBO5I0O5KABlN930GwaMQz.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
+            <div className={s.ss}> <h5>{item.name}</h5>
+              <h3>{item.buyPrice.value} сум</h3>
               <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
             </div>
           </div>
-          <div class={s.card}>   <div class={s.img} style={{ background: 'url(https://api.cabinet.smart-market.uz/uploads/images/8a8386028364c7d0196bb203)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
-            <div className={s.ss}>  <h5>Небулайзер Ulaizer Air+ VP-
-              D2</h5>
-              <h3>3 640 000 сум</h3>
-              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
-            </div>
-          </div>
-
-          <div class={s.card}>   <div class={s.img} style={{ background: 'url(https://api.cabinet.smart-market.uz/uploads/images/8a8386028364c7d0196bb203)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
-            <div className={s.ss}>    <h5>Небулайзер Ulaizer Air+ VP-
-              D2</h5>
-              <h3>3 640 000 сум</h3>
-              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
-            </div>
-            </div>
-          <div class={s.card}>   <div class={s.img} style={{ background: 'url(https://api.cabinet.smart-market.uz/uploads/images/8a8386028364c7d0196bb203)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-          </div>
-            <div className={s.ss}><h5>Небулайзер Ulaizer Air+ VP-
-              D2</h5>
-              <h3>3 640 000 сум</h3>
-              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
-            </div>
-          </div>
-          <div class={s.card}>   <div class={s.img} style={{ background: 'url(https://api.cabinet.smart-market.uz/uploads/images/8a8386028364c7d0196bb203)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
-            <div className={s.ss}>  <h5>Небулайзер Ulaizer Air+ VP-
-              D2</h5>
-              <h3>3 640 000 сум</h3>
-              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
-            </div>
-            </div>
-          <div class={s.card}>   <div class={s.img} style={{ background: 'url(https://api.cabinet.smart-market.uz/uploads/images/8a8386028364c7d0196bb203)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
-            <div className={s.ss}> <h5>Небулайзер Ulaizer Air+ VP-
-              D2</h5>
-              <h3>3 640 000 сум</h3>
-              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
-            </div>
-            </div>
+          })}
         </div>
       </main>
       <Footer/>
