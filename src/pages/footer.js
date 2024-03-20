@@ -45,6 +45,8 @@ export default function footer() {
      
      </ul>
       </div>
+      <hr style={{width:'40%',margin:'auto',color:'rgba(128, 128, 128, 0.175)',opasity:'0.7',boxShadow:'0px 0px 0px 1px'}} />
+      <p className={s.footer_p}>Copyright ©2024 All rights reserved | This web site is made with  by 4a.uz</p>
     </div>
   )
 }
