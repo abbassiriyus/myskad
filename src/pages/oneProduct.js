@@ -10,9 +10,11 @@ export default function oneProduct() {
     <div>
         <Navbar/>
     <div className={s.body}>
-    <div className={s.image}>
-    <Image src={img} alt="" />
-    </div>
+  <div className={s.d}>
+  <div  className={s.image}>
+  
+  </div>
+  </div>
     <div className={s.about}>
       <h3>Ноутбук HP 15s-fq3011ur 15.6" Celeron N4500
 4Гб DDR4 256Гб SSD (3V7K5EA)</h3>
