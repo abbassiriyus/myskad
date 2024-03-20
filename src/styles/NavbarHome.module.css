@@ -27,6 +27,7 @@
 }
 .input_search input{
     border: none;
+    outline: none;
     height: 30px;
     padding-left: 10px;
 }

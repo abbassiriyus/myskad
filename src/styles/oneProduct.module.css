@@ -1,0 +1,7 @@
+.body{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 3fr 3fr 2fr;
+    max-width: 1400px;
+}
