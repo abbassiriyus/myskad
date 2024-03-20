@@ -1,111 +1,83 @@
 .footer_sayt{
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
     width: 90%;
     max-width: 1400px;
-    align-items: center;
+    /* align-items: center; */
     margin: auto;
     margin-top: 30px;
     flex-wrap: wrap;
+    margin-bottom: 40px;
 }
-.app_1{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap:20px;
-    
-    margin-top: 20px;
+.app img{
+    margin-bottom: 20px;
 }
 .app{
-    border: 1px solid #E9E9E9;
-    padding: 10px;
-width: 300px;
-margin: auto;
-}
-.app h5{
     font-family: "Manrope", sans-serif;
-font-size: 14px;
-font-weight: 600;
-line-height: 17px;
-letter-spacing: 0em;
-
 }
-.contact h5{
-    font-family: "Manrope", sans-serif;
-font-size: 14px;
-font-weight: 900;
-line-height: 17px;
-margin-bottom: 10px;
-letter-spacing: 0em;
-
-}
-.contact p{
-    font-family: "Manrope", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 17px;
-}
-.pay{
-    border: 1px solid #E9E9E9 ; 
-    padding: 10px;
-   padding-bottom: 10px;
-}
-.contact{
-    width: 300px;
-}
-.contact span{
-    margin-left: 20px;
-    font-family: "Manrope", sans-serif;
-font-size: 14px;
-font-weight: 400;
-color: #1BC5BD;
-
-line-height: 17px;
-letter-spacing: 0em;
-}
-.footer_p{
-  font-family: "Manrope", sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 15px;
-  text-align: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-.payme{
+.apps{
     display: flex;
-    justify-content: space-around;
-   width: 300px;
- 
+    gap: 10px;
+    margin-top: 20px;
 }
-.pay p{
+.footer_sayt ul {
+    list-style: none;
     font-family: "Manrope", sans-serif;
-    font-size: 12px; 
-    text-align: center;
 }
-@media(max-width:700px){
-    .app{
-width: 90%;
-max-width: 400px;
-margin-top: 20px;
-margin-bottom: 20px;
-border: none;
-text-align: center;
-    }
-    .contact{
-        width:90% ;
-        text-align: center;
-    }
-    .contact span{
-        margin: 0px;
-    }
-    .pay{
+.footer_sayt ul li {
+    margin-top: 30px;
+}
+.social{
+    display: flex;
+    font-size: 24px;
+    margin-top: 30px;
+    gap: 35px;
+}
+@media(max-width:1200px){
+    .footer_sayt{
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr ;
         width: 90%;
-max-width: 400px;
-border: none;
+        max-width: 1400px;
+        /* align-items: center; */
+        margin: auto;
+        margin-top: 30px;
+        flex-wrap: wrap;
     }
-    .payme{
-        width: 100%;
-        margin-bottom: 20px;
+    .apps{
+        margin-bottom: 50px;
+    }
+}
+@media(max-width:913px){
+    .footer_sayt{
+        display: grid;
+        grid-template-columns: 1.5fr 1fr  ;
+        width: 90%;
+        max-width: 1400px;
+        /* align-items: center; */
+        margin: auto;
+        margin-top: 30px;
+        flex-wrap: wrap;
+    }
+    .apps{
+        margin-bottom: 50px;
+    }
+}
+@media(max-width:660px){
+    .footer_sayt{
+        display: grid;
+        grid-template-columns: 1.5fr ;
+        width: 90%;
+        max-width: 400px;
+        /* align-items: center; */
+        margin: auto;
+        margin-top: 30px;
+        flex-wrap: wrap;
+    }
+    .apps{
+        margin-bottom: 50px;
+    }
+    .footer_sayt ul{
+        margin-bottom: 40px;
     }
 }

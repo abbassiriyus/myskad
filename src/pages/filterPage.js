@@ -12,7 +12,7 @@ export default function filterPage() {
         <Navbar/>
         <div className={s.noutbuk_body}>
         <div className={s.page_road}>   
-            <p>Главная / Ноутбуки и компьютеры</p>
+            <p><span >Главная</span> / Ноутбуки и компьютеры</p>
         </div>
         <div className={s.price}>
             <h3>Ноутбуки</h3>

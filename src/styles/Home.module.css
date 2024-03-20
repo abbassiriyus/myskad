@@ -178,7 +178,7 @@ cursor: pointer;
   color: red;
 }
 .main2 .karzinka1 .p{
-color: rgb(9, 100, 100);
+color: red;
 }
 .main2 .karzinka1:hover .p{
   display: none;
