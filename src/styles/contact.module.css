@@ -1,0 +1,214 @@
+.contact_sayt{
+    width: 90%;
+    max-width: 1400px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 90px;
+}
+.page_road{
+    background-color: rgba(255, 0, 0, 0.116);
+    padding: 5px;
+    margin-bottom: 60px;
+    display: flex;
+    font-family: "Manrope", sans- serif;
+    justify-content: start;
+    font-size: 14px;
+
+    min-height: 100px;
+    
+}
+.span_p{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    max-width: 1400px;
+    align-items: end;
+}
+
+.page_road span{
+  font-weight: 600;
+  text-decoration: underline;
+}
+.white{
+    width: 90%;
+    border-radius: 20px;
+    margin: auto;
+    background-color: white;
+    min-height: 500px;
+    overflow: hidden;
+    box-shadow: rgba(255, 0, 0, 0.116) 0px 18px 50px -10px;
+}
+.white_body{
+    display: grid;
+    /* align-items: center; */
+    grid-template-columns: 1.5fr 4fr;
+    font-family: "Manrope", sans- serif;
+}
+.phone{
+    margin-bottom: 20px;
+    margin-top: 70px;
+    margin-bottom: 30px;
+    text-align: center;
+
+}
+@media(max-width:500px){
+    .span_p h1{
+        font-size: 19px;
+    }
+
+}
+@media(max-width:345px){
+  .span_p h1{
+    font-size: 16px;
+  }
+}
+
+.phone h3{
+    color: red;
+}
+.location{
+    display: grid;
+    grid-template-columns: 1fr;
+    border-right: 2px solid rgba(128, 128, 128, 0.425);
+}
+.inputs{
+    margin-left: 30px;
+}
+.inputs input{
+    width: 90%;
+    border: none;
+    background-color:rgba(255, 0, 0, 0.116) ;
+    height: 40px;
+    outline: none;
+    border-radius: 10px;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+.inputs h1{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.inputs textarea{
+ width: 90%;
+ border: none;
+ background-color:rgba(255, 0, 0, 0.116)  ;
+ margin-top: 30px;
+ border-radius: 10px;
+ padding-left: 20px;
+ outline: none;
+ padding-top: 20px;
+
+}
+.inputs button{
+    padding: 10px 40px;
+    border: 1px solid white;
+    font-weight: 600;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    margin-top: 20px;
+    transition: 0.6s;
+    margin-bottom: 20px;
+
+}
+.inputs button:hover{
+    background-color: white;
+    color: red;
+    border: 1px solid red;
+}
+.location1{
+    display: none;
+}
+.phone1{
+    margin-bottom: 20px;
+    margin-top: 70px;
+    margin-bottom: 30px;
+    text-align: center;
+
+}
+@media(max-width:991px){
+    .white_body{
+        display: grid;
+        /* align-items: center; */
+        grid-template-columns: 1fr;
+        font-family: "Manrope", sans- serif;
+    }
+    .inputs{
+        margin-left: 15px;
+    }
+    .location{
+        display: none;
+    }
+    .white{
+        width: 100%;
+    }
+    .location1{
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr;
+        gap: 40px;
+
+    }   
+}
+@media(max-width:570px){
+    .white_body{
+        display: grid;
+        /* align-items: center; */
+        grid-template-columns: 1fr;
+        font-family: "Manrope", sans- serif;
+    }
+    .location{
+        display: none;
+    }
+    .location1{
+        display: block;
+    }   
+    .inputs h1{
+        font-size: 30px;
+    }
+}
+@media(max-width:470px){
+    .inputs h1{
+        font-size: 25px;
+    }
+    .inputs p{
+        font-size: 14px;
+        padding-right: 20px;
+    }
+}
+@media(max-width:450px){
+    .map{
+        height: 300px;
+    }
+}
+/* @media(max-width:390px){
+    .inputs h1{
+        font-size: 20px;
+    }
+    .inputs p{
+        font-size: 10px;
+    }
+} */
+@media(max-width:360px){
+    .inputs h1{
+        font-size: 22px;
+    }
+}
+@media(max-width:344px){
+    /* .
+    .inputs p{
+        font-size: 9px;
+    } */
+    .inputs{
+        margin-left: 5px;
+    }
+    .white{
+        width: 100%;
+    }
+}
+.map{
+    width: 100%;
+    border: 0px;
+    position: relative;
+    top: 4px;
+}

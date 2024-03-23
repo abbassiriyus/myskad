@@ -23,11 +23,11 @@ export default function contact() {
 
 <div className={s.welcome}>
 <div className={s.welcome_text}>
-<span>We believe in less but better</span>
-<h1>Welcome to MedQ! The purpose of your service is to create our MedQ. So we always want to be by your side....</h1>
-<p>Our company has been working honestly for 25 years. To make a positive impact in the markets where we operate, to empower partners and the community. we focusing on growth and adding value to customers.</p>
-<p>A message from our founders</p>
-<p className={s.border}>We’ve been able to create a platform that customers can get their hands on whenever they want. It is always our intention to serve you.</p>
+<span>Мы верим в меньшее, но в лучшее</span>
+<h1>Добро пожаловать в МедК! Цель вашей службы — создание нашего MedQ. Поэтому мы всегда хотим быть рядом с вами....</h1>
+<p>Наша компания работает честно уже 5 лет. Оказать положительное влияние на рынки, на которых мы работаем, расширить возможности партнеров и сообщества. мы фокусируемся на росте и добавлении ценности для клиентов.</p>
+<p>Сообщение от наших основателей</p>
+<p className={s.border}>Нам удалось создать платформу, к которой клиенты могут получить доступ, когда захотят. Мы всегда стремимся служить вам.</p>
 </div>
 <div style={{background:'url("https://cdn.vox-cdn.com/thumbor/kON-ZQrYVHKQkmczFhRK_kabAcw=/0x0:6222x3500/2000x1333/filters:focal(3111x1750:3112x1751)/cdn.vox-cdn.com/uploads/chorus_asset/file/22298929/SM3DW_Lead.jpg")',width:'100%',backgroundSize:'cover',backgroundPosition:'center'}} className={s.welcome_img}>
     
@@ -37,43 +37,43 @@ export default function contact() {
 <div className={s.clients}>
     <div className={s.win}>
     <h1>12M</h1>
-    <span>Happy Clients</span>
+    <span>Счастливые клиенты</span>
     </div>
     <div className={s.win}>
     <h1>22M</h1>
-    <span>Global Customers</span>
+    <span>Глобальные клиенты</span>
     </div>
     <div className={s.win}>
     <h1>79+</h1>
-    <span>Experts Employee</span>
+    <span>Эксперты Сотрудник</span>
     </div>
     <div className={s.win}>
     <h1>29+</h1>
-    <span>Awards Win</span>
+    <span>Награды</span>
     </div>  
 </div>
 <div className={s.choose_us}>
-    <h1>Why Choose Us</h1>
+    <h1>Почему выбрали нас</h1>
     <hr style={{marginBottom:'30px'}} />
 <div className={s.production}>
 <div className={s.quick}>
    <div className={s.quick_body}>
     <center><BsBuilding style={{color:'red',fontSize:'40px',marginBottom:'20px'}} /></center>
-   <h2>High Production</h2>
+   <h2>Высокая производительность</h2>
     <p>Lorem ipsum dolor sit amet, consectetur ipiscing elit, sed do eiusmod tempor inc ididunt ut labore et dolore magna aliqua.</p>
    </div>
     </div> 
     <div className={s.quick}>
    <div className={s.quick_body}>
     <center><GrLink  style={{color:'red',fontSize:'40px',marginBottom:'20px'}} /></center>
-   <h2>Reliable Supplying</h2>
+   <h2>Надежные поставки</h2>
     <p>Lorem ipsum dolor sit amet, consectetur ipiscing elit, sed do eiusmod tempor inc ididunt ut labore et dolore magna aliqua.</p>
    </div>
     </div> 
     <div className={s.quick}>
    <div className={s.quick_body}>
     <center><GrDeliver  style={{color:'red',fontSize:'40px',marginBottom:'20px'}} /></center>
-   <h2>Quick Delivery</h2>
+   <h2>Быстрая доставка</h2>
     <p>Lorem ipsum dolor sit amet, consectetur ipiscing elit, sed do eiusmod tempor inc ididunt ut labore et dolore magna aliqua.</p>
    </div>
     </div> 
@@ -83,29 +83,29 @@ export default function contact() {
 <div className={s.delivery}>
 <GrDeliver  style={{color:'red',fontSize:'40px'}} />
 <div className={s.shipping}>
-    <h3>Free Shipping</h3>
-    <p>Free shipping world wide</p>
+    <h3>Бесплатная доставка</h3>
+    <p>Бесплатная доставка по всему миру</p>
 </div>
 </div>
 <div className={s.delivery}>
 <FaHeadphones   style={{color:'red',fontSize:'40px'}} />
 <div className={s.shipping}>
-    <h3>Support 24/7</h3>
-    <p>Contact us 24 hours a day</p>
+    <h3>Поддерживать 24/7</h3>
+    <p>Свяжитесь с нами 24 часа в сутки</p>
 </div>
 </div>
 <div className={s.delivery}>
 <FaRegCreditCard   style={{color:'red',fontSize:'40px'}} />
 <div className={s.shipping}>
-    <h3>Secure Payments</h3>
-    <p>100% payment protection</p>
+    <h3>Безопасные платежи</h3>
+    <p>100% защита платежей</p>
 </div>
 </div>
 <div className={s.delivery}>
 <IoMdCart   style={{color:'red',fontSize:'40px'}} />
 <div className={s.shipping}>
-    <h3>Easy Return</h3>
-    <p>Simple returns policy</p>
+    <h3>Легкий возврат</h3>
+    <p>Простая политика возврата</p>
 </div>
 </div>
 </div>
