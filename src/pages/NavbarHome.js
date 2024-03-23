@@ -28,7 +28,7 @@ export default class NavbarHome extends Component {
 	  			<a href="#">Dropdown Link </a>
 	  		</div>
   			<a href="#">Документы</a>
-  			<a href="#">Контакты</a>
+  			<a href="/contact">Контакты</a>
   		</div>
   	</div>
 <Image src={logo} className={n.logo} />
