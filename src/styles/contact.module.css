@@ -6,15 +6,25 @@
     margin-bottom: 90px;
 }
 .page_road{
-    border: 1px solid grey;
-    width: 180px;
+    background-color: rgba(255, 0, 0, 0.116);
     padding: 5px;
     margin-bottom: 30px;
     display: flex;
     font-family: "Manrope", sans- serif;
     justify-content: start;
     font-size: 14px;
+    min-height: 100px;
+    
 }
+.span_p{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    max-width: 1400px;
+    align-items: end;
+}
+
 .page_road span{
   font-weight: 600;
   text-decoration: underline;
@@ -75,7 +85,10 @@
         height: 400px;
     }
 }
-@media(max-width:490px){
+@media(max-width:500px){
+    .span_p h1{
+        font-size: 19px;
+    }
     .welcome_img{
         height: 300px;
     }
@@ -84,6 +97,15 @@
     .welcome_text h1{
         font-size: 15px;
     }
+  
+}
+@media(max-width:345px){
+    .welcome_text h1{
+        font-size: 15px;
+    }
+  .span_p h1{
+    font-size: 16px;
+  }
 }
 
 .clients{

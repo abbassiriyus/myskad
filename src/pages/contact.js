@@ -11,11 +11,14 @@ import { FaHeadphones } from "react-icons/fa";
 export default function contact() {
   return (
     <div>
-<Navbar/>
-<div className={s.contact_sayt}>
-<div className={s.page_road}>   
+<Navbar/><div className={s.page_road}>   
+            <div className={s.span_p}>
+                <h1>О компании</h1>
             <p><span >Главная</span> /О компании</p>
+            </div>
         </div>
+<div className={s.contact_sayt}>
+
 <div className={s.welcome}>
 <div className={s.welcome_text}>
 <span>We believe in less but better</span>
