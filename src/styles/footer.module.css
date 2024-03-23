@@ -21,11 +21,20 @@
     margin-top: 20px;
 }
 .footer_sayt ul {
+  
     list-style: none;
     font-family: "Manrope", sans-serif;
 }
-.footer_sayt ul li {
+.footer_sayt ul li{
     margin-top: 30px;
+}
+.footer_sayt ul a{
+    color: black;
+    text-decoration: none;
+    transition: 0.6s;
+}
+.footer_sayt ul a:hover{
+    color: red;
 }
 .social{
     display: flex;

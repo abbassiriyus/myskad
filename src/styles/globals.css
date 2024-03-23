@@ -278,7 +278,7 @@
     border-bottom: 8px solid #fff;
   }
   
-  a {
+  .sec-center a {
     position: relative;
     color: #fff;
     transition: all 200ms linear;
@@ -304,7 +304,7 @@
   .dark-light:checked ~ .sec-center .section-dropdown a {
     color: black;
   }
-  a:hover {
+ .sec-center a:hover {
     color: black;
     background-color: #E91F25;
   }
@@ -312,7 +312,7 @@
     color: #E91F25;
     background-color: black;
   }
-  a .uil {
+ .sec-center a .uil {
     font-size: 22px;
   }
   .dropdown-sub:checked + label,

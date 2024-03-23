@@ -1,17 +1,19 @@
 import React from 'react'
 import Footer from "../pages/footer"
 import Navbar from "../pages/NavbarHome"
-import s from "../styles/contact.module.css"
+import s from "../styles/about.module.css"
 import { BsBuilding } from "react-icons/bs";
 import { FaRegCreditCard } from "react-icons/fa6";
 import { GrLink } from "react-icons/gr";
 import { IoMdCart } from "react-icons/io";
-import { GrDeliver } from "react-icons/gr";
-import { FaHeadphones } from "react-icons/fa";  
+import { GrDeliver } from "react-icons/gr";    
+import { FaHeadphones } from "react-icons/fa"; 
 export default function contact() {
+ 
   return (
     <div>
-<Navbar/><div className={s.page_road}>   
+<Navbar/>
+<div className={s.page_road}>   
             <div className={s.span_p}>
                 <h1>О компании</h1>
             <p><span >Главная</span> /О компании</p>
