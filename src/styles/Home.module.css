@@ -146,7 +146,7 @@ margin-bottom: 30px;
 }
  .main2 .cards{
   display: grid;
-  grid-template-columns:  1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns:  1fr 1fr 1fr 1fr 1fr;
   gap: 10px;
 }
 .main2 .card{
@@ -158,6 +158,8 @@ margin-bottom: 30px;
 }
 .main2 .img{
 height: 200px;
+background-size: cover !important;
+background-position: center !important;
 /* border-radius: 20px; */
 }
 .main2 .karzinka1{
