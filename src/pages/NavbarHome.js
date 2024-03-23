@@ -20,7 +20,7 @@ export default class NavbarHome extends Component {
 	  	<input class="dropdown" type="checkbox" id="dropdown" name="dropdown"/>
 	  	<label class="for-dropdown" for="dropdown"><Image src={toogle} /> </label>
   		<div style={{maxWidth:'400px'}} class="section-dropdown"> 
-  			<a href="#">О компании</a>
+  			<a href="/contact">О компании</a>
 		  	<input class="dropdown-sub" type="checkbox" id="dropdown-sub" name="dropdown-sub"/>
 		  	<label class="for-dropdown-sub" for="dropdown-sub">Категория <IoIosArrowForward/></label>
 	  		<div class="section-dropdown-sub"> 
@@ -28,7 +28,7 @@ export default class NavbarHome extends Component {
 	  			<a href="#">Dropdown Link </a>
 	  		</div>
   			<a href="#">Документы</a>
-  			<a href="/contact">Контакты</a>
+  			<a href="#">Контакты</a>
   		</div>
   	</div>
 <Image src={logo} className={n.logo} />
