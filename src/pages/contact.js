@@ -37,7 +37,7 @@ export default function contact() {
             </div>
             <div className={s.inputs}>
                 <h1>Отправить сообщение</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto repellendus cum iste, consequuntur similique officia consectetur modi rem illo ex. Eos fuga,  eligendi consequuntur et mollitia eius reprehenderit?</p>
+                <p>поделитесь с нами своими предложениями, и мы свяжемся с вами в ближайшее время</p>
                 <input type="text" name="" id="" placeholder='Введите ваше имя'/>
                 <input type="text" name="" id="" placeholder='Введите свой номер телефона '/>
                 <input type="text" name="" id="" placeholder='Введите адрес электронной почты '/>
