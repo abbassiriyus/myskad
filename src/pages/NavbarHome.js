@@ -20,18 +20,20 @@ export default class NavbarHome extends Component {
 	  	<input class="dropdown" type="checkbox" id="dropdown" name="dropdown"/>
 	  	<label class="for-dropdown" for="dropdown"><Image src={toogle} /> </label>
   		<div style={{maxWidth:'400px'}} class="section-dropdown"> 
-  			<a href="/contact">О компании</a>
+      <a href="/">Домашняя страница</a>
 		  	<input class="dropdown-sub" type="checkbox" id="dropdown-sub" name="dropdown-sub"/>
 		  	<label class="for-dropdown-sub" for="dropdown-sub">Категория <IoIosArrowForward/></label>
 	  		<div class="section-dropdown-sub"> 
+        
 	  			<a href="#">Смартфоны и гаджеты </a>
 	  			<a href="#">Dropdown Link </a>
 	  		</div>
+        <a href="/about/">О компании</a>
   			<a href="#">Документы</a>
   			<a href="#">Контакты</a>
   		</div>
   	</div>
-<Image src={logo} className={n.logo} />
+<Image onClick={()=>{window.location="/"}} src={logo} className={n.logo} />
 </div>
 <div className={n.input_search}>
     <input placeholder='Найти товары' type="text" />
