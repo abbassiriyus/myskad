@@ -5,7 +5,7 @@ import { IoMdSearch } from "react-icons/io";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { BiWorld } from "react-icons/bi";
 import { FaPhone } from "react-icons/fa";
-
+import { IoIosArrowForward } from "react-icons/io";
 import user_image from "../image/user_image.png"
 import toogle from "../image/toogle.png"
 import logo from "../image/logo.png"
@@ -15,7 +15,22 @@ export default class NavbarHome extends Component {
       <div>
 <div className={n.navbar_home}>
 <div className={n.logo}>
-<Image src={toogle} />
+
+<div class="sec-center" style={{position:'relative'}}> 	
+	  	<input class="dropdown" type="checkbox" id="dropdown" name="dropdown"/>
+	  	<label class="for-dropdown" for="dropdown"><Image src={toogle} /> </label>
+  		<div style={{maxWidth:'400px'}} class="section-dropdown"> 
+  			<a href="#">О компании</a>
+		  	<input class="dropdown-sub" type="checkbox" id="dropdown-sub" name="dropdown-sub"/>
+		  	<label class="for-dropdown-sub" for="dropdown-sub">Категория <IoIosArrowForward/></label>
+	  		<div class="section-dropdown-sub"> 
+	  			<a href="#">Смартфоны и гаджеты </a>
+	  			<a href="#">Dropdown Link </a>
+	  		</div>
+  			<a href="#">Документы</a>
+  			<a href="#">Контакты</a>
+  		</div>
+  	</div>
 <Image src={logo} className={n.logo} />
 </div>
 <div className={n.input_search}>
@@ -40,7 +55,7 @@ export default class NavbarHome extends Component {
 </div>
 <div className={n.line}></div>
 
-
+  	
       </div>
     )
   }
