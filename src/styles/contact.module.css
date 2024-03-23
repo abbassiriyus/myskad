@@ -1,0 +1,220 @@
+.contact_sayt{
+    width: 90%;
+    max-width: 1400px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 90px;
+}
+.page_road{
+    border: 1px solid grey;
+    width: 180px;
+    padding: 5px;
+    margin-bottom: 30px;
+    display: flex;
+    font-family: "Manrope", sans- serif;
+    justify-content: start;
+    font-size: 14px;
+}
+.page_road span{
+  font-weight: 600;
+  text-decoration: underline;
+}
+.welcome{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    gap: 20px;
+    font-family: "Manrope", sans- serif;
+
+}
+.welcome_text span{
+    color: red;
+    font-family: "Manrope", sans- serif;
+    font-weight: 800;
+}
+.welcome_text h1{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.welcome_text p{
+    margin-bottom: 25px;
+}
+.border{
+    border-left: 4px solid red;
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 20px;
+}
+@media(max-width:991px){
+    .welcome{
+        display: grid;
+        grid-template-columns: 1fr ;
+        align-items: stretch;
+        gap: 20px;
+        font-family: "Manrope", sans- serif;
+    
+    }
+    .welcome_img{
+        height: 500px;
+    }
+}
+@media(max-width:545px){
+    .welcome{
+        display: grid;
+        grid-template-columns: 1fr;
+        /* align-items: stretch; */
+        gap: 20px;
+        font-family: "Manrope", sans- serif;
+    
+    }
+    .welcome_text h1{
+        font-size: 20px;
+    }
+    .welcome_img{
+        height: 400px;
+    }
+}
+@media(max-width:490px){
+    .welcome_img{
+        height: 300px;
+    }
+}
+@media(max-width:345px){
+    .welcome_text h1{
+        font-size: 15px;
+    }
+}
+
+.clients{
+    width: 90%;
+    max-width: 1400px;
+    margin: auto;
+    margin-top: 40px;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.win{
+    text-align: center;
+    font-family: "Manrope", sans- serif;
+}
+.win h1{
+    color: red;
+}
+.win span{
+    font-weight: 700;
+
+}
+@media (max-width:700px) {
+    .clients{
+        width: 90%;
+        max-width: 1400px;
+        margin: auto;
+        margin-top: 40px;
+        display: grid;
+        gap: 30px;
+        grid-template-columns: 1fr 1fr ;
+    }
+}
+@media (max-width:400px) {
+    .clients{
+        width: 90%;
+        max-width: 1400px;
+        margin: auto;
+        margin-top: 40px;
+        display: grid;
+        gap: 30px;
+        grid-template-columns: 1fr  ;
+    }
+    .win{
+        margin-bottom: 30px;
+    }
+}
+.choose_us{
+    font-family: "Manrope", sans- serif;
+    margin-top: 50px;
+}
+.choose_us h1{
+    margin-bottom: 20px;
+}
+.production{
+    margin-top: 40px;
+        display: grid;
+        gap: 30px;
+        margin-bottom: 40px;
+        grid-template-columns: 1.5fr 1.5fr 1.5fr ;
+}
+.quick_body{
+    padding: 20px;
+
+}
+.quick{
+    background-color: rgba(255, 0, 0, 0.116);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.quick h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.quick p{
+    margin-bottom: 30px;
+}
+.quick:hover{
+    background-color: white;
+    box-shadow: 2px 2px 32px 10px rgba(255, 0, 0, 0.215);
+}
+@media (max-width:1000px) {
+    .production{
+        margin-top: 40px;
+        display: grid;
+        gap: 30px;
+        grid-template-columns: 1.5fr 1.5fr ;
+    }
+}
+@media (max-width:600px) {
+    .production{
+        margin-top: 40px;
+        display: grid;
+        gap: 30px;
+        grid-template-columns:1fr ;
+    }
+}
+.delivery{
+    display: flex;
+    gap: 20px;
+}
+.free{
+    margin-top: 40px;
+        display: grid;
+        gap: 30px;
+        margin-bottom: 40px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+@media(max-width:1221px){
+    .free{
+        margin-top: 40px;
+            display: grid;
+            gap: 30px;
+            margin-bottom: 40px;
+            grid-template-columns: 1fr 1fr ;
+    }
+}
+@media(max-width:666px){
+    .free{
+        margin-top: 40px;
+        display: grid;
+        gap: 30px;
+        margin-bottom: 40px;
+        grid-template-columns: 1fr  ;
+    }
+    .delivery{
+        display: block;
+        margin: auto;
+        text-align: center;
+        gap: 20px;
+    }
+}
