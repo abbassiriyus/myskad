@@ -24,10 +24,10 @@ export default function footer() {
      </div>
      <ul>
       <h3>Menu</h3>
-    <a href=""><li>О компании</li></a>
+    <a href="/about"><li>О компании</li></a>
     
-    <a href="">  <li>Документов</li></a>
-    <a href=""><li>Контакты</li></a>
+    <a href=""><li>Документов</li></a>
+    <a href="/contact"><li>Контакты</li></a>
      
      </ul>
      <ul>

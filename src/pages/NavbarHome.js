@@ -30,7 +30,7 @@ export default class NavbarHome extends Component {
 	  		</div>
         <a href="/about/">О компании</a>
   			<a href="#">Документы</a>
-  			<a href="#">Контакты</a>
+  			<a href="/contact">Контакты</a>
   		</div>
   	</div>
 <Image onClick={()=>{window.location="/"}} src={logo} className={n.logo} />
