@@ -62,14 +62,14 @@ export default function filterPage() {
             <div className={s.ss}> <h5>Небулайзер Ulaizer Air+ VP-
               D2</h5>
               <h3>3 640 000 сум</h3>
-              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
+              <div onClick={()=>window.location="/oneProduct/"} class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
             </div>
           </div>
           <div class={s.card}>   <div class={s.img} style={{ background: 'url(https://api.cabinet.smart-market.uz/uploads/images/8a8386028364c7d0196bb203)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
             <div className={s.ss}>  <h5>Небулайзер Ulaizer Air+ VP-
               D2</h5>
               <h3>3 640 000 сум</h3>
-              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
+              <div onClick={()=>window.location="/oneProduct/"} class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
             </div>
           </div>
 
@@ -77,7 +77,7 @@ export default function filterPage() {
             <div className={s.ss}>    <h5>Небулайзер Ulaizer Air+ VP-
               D2</h5>
               <h3>3 640 000 сум</h3>
-              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
+              <div onClick={()=>window.location="/oneProduct/"} class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
             </div>
             </div>
           <div class={s.card}>   <div class={s.img} style={{ background: 'url(https://api.cabinet.smart-market.uz/uploads/images/8a8386028364c7d0196bb203)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
@@ -85,21 +85,21 @@ export default function filterPage() {
             <div className={s.ss}><h5>Небулайзер Ulaizer Air+ VP-
               D2</h5>
               <h3>3 640 000 сум</h3>
-              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
+              <div onClick={()=>window.location="/oneProduct/"} class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
             </div>
           </div>
           <div class={s.card}>   <div class={s.img} style={{ background: 'url(https://api.cabinet.smart-market.uz/uploads/images/8a8386028364c7d0196bb203)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
             <div className={s.ss}>  <h5>Небулайзер Ulaizer Air+ VP-
               D2</h5>
               <h3>3 640 000 сум</h3>
-              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
+              <div onClick={()=>window.location="/oneProduct/"} class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
             </div>
             </div>
           <div class={s.card}>   <div class={s.img} style={{ background: 'url(https://api.cabinet.smart-market.uz/uploads/images/8a8386028364c7d0196bb203)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
             <div className={s.ss}> <h5>Небулайзер Ulaizer Air+ VP-
               D2</h5>
               <h3>3 640 000 сум</h3>
-              <div class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
+              <div onClick={()=>window.location="/oneProduct/"} class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus className={s.h1} /></div>
             </div>
             </div>
         </div>     

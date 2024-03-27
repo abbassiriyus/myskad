@@ -25,8 +25,8 @@ export default class NavbarHome extends Component {
 		  	<label class="for-dropdown-sub" for="dropdown-sub">Категория <IoIosArrowForward/></label>
 	  		<div class="section-dropdown-sub"> 
         
-	  			<a href="#">Смартфоны и гаджеты </a>
-	  			<a href="#">Dropdown Link </a>
+	  			<a href="/filterPage/">Смартфоны и гаджеты </a>
+	  			<a href="/filterPage/">Dropdown Link </a>
 	  		</div>
         <a href="/about/">О компании</a>
   			<a href="#">Документы</a>
