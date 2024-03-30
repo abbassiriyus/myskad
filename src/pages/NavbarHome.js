@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
 import n from "../styles/NavbarHome.module.css"
 import Image from 'next/image'
 import { IoMdSearch } from "react-icons/io";
@@ -9,31 +9,55 @@ import { IoIosArrowForward } from "react-icons/io";
 import user_image from "../image/user_image.png"
 import toogle from "../image/toogle.png"
 import logo from "../image/logo.png"
-export default class NavbarHome extends Component {
-  render() {
-    return (
-      <div>
+import axios from 'axios';
+import url from "./host.js"
+
+export default function NavbarHome() {
+  var [category,setCategory]=useState([])
+var [company,setCompany]=useState([{}])
+
+function getCompany(){
+  axios.get(`${url()}/api/company`).then(res=>{
+    if(res.data.length>0){
+      setCompany(res.data)
+    }
+  })
+}
+
+  function getCategory(){
+    axios.get(`${url()}/api/category`).then(res=>{
+  setCategory(res.data)
+    }).catch(err=>{
+  console.log(err);
+    })
+  }
+  useEffect(()=>{
+getCategory()
+getCompany()
+  },[])
+  return (
+    <div>
 <div className={n.navbar_home}>
 <div className={n.logo}>
 
 <div class="sec-center" style={{position:'relative'}}> 	
 	  	<input class="dropdown" type="checkbox" id="dropdown" name="dropdown"/>
-	  	<label class="for-dropdown" for="dropdown"><Image src={toogle} /> </label>
+	  	<label class="for-dropdown" for="dropdown"><Image src={toogle} alt='img' /> </label>
   		<div style={{maxWidth:'400px'}} class="section-dropdown"> 
       <a href="/">Домашняя страница</a>
 		  	<input class="dropdown-sub" type="checkbox" id="dropdown-sub" name="dropdown-sub"/>
 		  	<label class="for-dropdown-sub" for="dropdown-sub">Категория <IoIosArrowForward/></label>
 	  		<div class="section-dropdown-sub"> 
-        
-	  			<a href="/filterPage/">Смартфоны и гаджеты </a>
-	  			<a href="/filterPage/">Dropdown Link </a>
+        {category.map((item,key)=>{
+         	 return	<a key={key} href={`/products/${item.id}/`}>{item.category_title}</a>
+        })}
 	  		</div>
         <a href="/about/">О компании</a>
   			<a href="#">Документы</a>
   			<a href="/contact">Контакты</a>
   		</div>
   	</div>
-<Image onClick={()=>{window.location="/"}} src={logo} className={n.logo} />
+<img onClick={()=>{window.location="/"}} src={company[0].image} className={n.logo} />
 </div>
 <div className={n.input_search}>
     <input placeholder='Найти товары' type="text" />
@@ -51,7 +75,8 @@ export default class NavbarHome extends Component {
  </select>
 
 </div>
-<div className={n.contact1} ><FaPhone className={n.icons} /><p>+998-88-164-7777</p></div>
+<a className={n.contact1} href={`tel:+${company[0].phone}`} style={{textDecoration:'none',color:"black"}} ><FaPhone className={n.icons} /><p>
+  +{company[0].phone}</p></a>
 <Image src={user_image}  className={n.alluser_img} />
 </div>
 </div>
@@ -59,6 +84,5 @@ export default class NavbarHome extends Component {
 
   	
       </div>
-    )
-  }
+  )
 }

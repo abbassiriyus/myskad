@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import s from "../styles/footer.module.css"
 import img from "../img/image 25.png"
 import img1 from "../img/image 1.png"
@@ -10,12 +10,28 @@ import { MdEmail } from "react-icons/md";
 import { FaInstagram } from "react-icons/fa6";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
+import url from "./host"
+import axios from 'axios';
 export default function footer() {
+  var [company,setCompany]=useState([{}])
+
+function getCompany(){
+  axios.get(`${url()}/api/company`).then(res=>{
+    if(res.data.length>0){
+      setCompany(res.data)
+    }
+  })
+}
+useEffect(()=>{
+  getCompany()
+},[])
+
+
   return (
     <div>
       <div className={s.footer_sayt}>
      <div className={s.app}>
-     <Image src={img} alt="" />
+     <img src={company[0].image} alt="" />
       <p>Download the app by clicking the link below :</p>
       <div className={s.apps}>
         <Image src={img1} alt="" />
@@ -24,25 +40,25 @@ export default function footer() {
      </div>
      <ul>
       <h3>Menu</h3>
-    <a href="/about"><li>О компании</li></a>
+    <a href="/about/"><li>О компании</li></a>
     
     <a href=""><li>Документов</li></a>
-    <a href="/contact"><li>Контакты</li></a>
+    <a href="/contact/"><li>Контакты</li></a>
      
      </ul>
      <ul>
       <h3>Contact</h3>
-      <li><FaPhoneAlt style={{marginRight:'20px'}} />+998-88 164 7777</li>
-      <li><MdEmail style={{marginRight:'20px'}}/>radiocity@gmail.com</li>
-      <li><FaLocationDot style={{marginRight:'20px'}} />Buxoro , Buxoro 1A</li>
+      <a style={{textDecoration:'none',color:'black'}} href={`tel:+${company[0].phone}`}><li><FaPhoneAlt style={{marginRight:'20px'}} />+{company[0].phone}</li></a>
+     <a style={{textDecoration:'none',color:'black'}} href={`mailto:${company[0].email}`}><li><MdEmail style={{marginRight:'20px'}}/>{company[0].email}</li></a> 
+      <li><FaLocationDot style={{marginRight:'20px'}} />{company[0].address}</li>
      </ul>
      <ul>
       <h3>Sosial media</h3>
       <div className={s.social}>
-      <FaFacebookF />
-      <FaTelegram />
-      <FaYoutube />
-      <FaInstagram />
+     <a href={company[0].facebook}> <FaFacebookF /></a>
+    <a href={company[0].telegram}> <FaTelegram /></a> 
+      <a href={company[0].youtobe}><FaYoutube /></a>
+     <a href={company[0].instagram}><FaInstagram /></a> 
       </div>
      
      </ul>
