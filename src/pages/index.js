@@ -51,6 +51,7 @@ console.log(err);
   })
 
 }
+
 function gettopTovar(id) {
   axios.get(`${url()}/api/top_tovar`).then(res1=>{
     if(res1.data.length>0){
@@ -60,8 +61,7 @@ function gettopTovar(id) {
       const timestampB = new Date(b.updated);
       return timestampB - timestampA;
     });
-console.log(res.data);
-    setBestSeller(res.data)
+    setTopTovar(res.data)
   }).catch(err=>{
 console.log(err);
   }) 
@@ -125,11 +125,11 @@ gettopTovar(5)
       <main className={s.main2}>
         <h4>Популярные</h4>
         <div class={s.cards}>
-        {data.map((item,key)=>{
+        {topTovar.map((item,key)=>{
             return <div class={s.card} >
             <div class={s.img} style={(item.images.rows).length>0?{background: `url(${item.images.rows[0].miniature.downloadHref})`, backgroundSize: 'cover', backgroundPosition: 'center'}:{background: 'url(https://t4.ftcdn.net/jpg/04/73/25/49/360_F_473254957_bxG9yf4ly7OBO5I0O5KABlN930GwaMQz.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
             <div className={s.ss}> <h5>{item.name}</h5>
-              <h3>{item.buyPrice.value} сум</h3>
+              <h3>{item.buyPrice && item.buyPrice.value} сум</h3>
               <div onClick={()=>window.location="/oneProduct/"} class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus  className={s.h1} /></div>
             </div>
           </div>
@@ -144,7 +144,7 @@ gettopTovar(5)
             return <div class={s.card} >
             <div class={s.img} style={(item.images.rows).length>0?{background: `url(${item.images.rows[0].miniature.downloadHref})`, backgroundSize: 'cover', backgroundPosition: 'center'}:{background: 'url(https://t4.ftcdn.net/jpg/04/73/25/49/360_F_473254957_bxG9yf4ly7OBO5I0O5KABlN930GwaMQz.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
             <div className={s.ss}> <h5>{item.name}</h5>
-              <h3>{item.buyPrice?item.buyPrice.value:""} сум</h3>
+              <h3>{item.buyPrice && item.buyPrice.value} сум</h3>
               <div onClick={()=>window.location="/oneProduct/"} class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus  className={s.h1} /></div>
             </div>
           </div>
