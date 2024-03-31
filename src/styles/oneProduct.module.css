@@ -10,7 +10,8 @@
 }
 .image{
     /* width: 95%; */
-    background: url('https://img.freepik.com/free-vector/laptop-coloured_78370-510.jpg') no-repeat;
+    background-size: cover !important;
+    background-position: center !important;
     width: 90%;
     background-size: 100% 100%;
     min-height: 500px;

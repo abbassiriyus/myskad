@@ -75,6 +75,9 @@
   }
   .main2 .img{
   height: 200px;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
   /* border-radius: 20px; */
   }
   .main2 .karzinka1{
