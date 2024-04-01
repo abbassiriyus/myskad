@@ -19,6 +19,25 @@ function getProduct(id) {
     })
 }
 
+var sendmessage=()=>{
+  var sendMessage=""
+  sendMessage+="ismi:"+document.querySelector('.imya').value+`%0A`
+  sendMessage+="nomer:"+document.querySelector('.nomer').value+`%0A`
+  sendMessage+="id:"+data.id+`%0A` 
+sendMessage+="product:"+data.name+`%0A`
+
+  axios.get(`https://api.telegram.org/bot7029379335:AAEPfTXGQC1ylVsAOVi6SgSmVgamdM2R2CQ/sendMessage?chat_id=-1002089485609&text=${sendMessage}`).then(res=>{
+   document.querySelector('.imya').value=""
+  document.querySelector('.nomer').value="" 
+  axios.get(`https://api.telegram.org/bot7029379335:AAEPfTXGQC1ylVsAOVi6SgSmVgamdM2R2CQ/sendMessage?chat_id=1520593027&text=${sendMessage}`)
+    alert("Информация отправлена. Мы скоро свяжемся с вами")
+  }).catch(err=>{
+    alert('Пожалуйста, позвоните по номеру. Ваше сообщение не было отправлено')
+  })
+}
+
+
+
 useEffect(()=>{
         console.log(router.query.id);
         if(router.query.id){
@@ -43,9 +62,9 @@ useEffect(()=>{
 <div className={s.order}>
 <div className={s.price_big}>
 <div className={s.price}>
-    <h3>{data.buyPrice && data.buyPrice.value} сум</h3>
+    <h3>{data.buyPrice && data.buyPrice.value/100} сум</h3>
     <div className={s.price_back}>
-      <span>≈ $ 329.79</span>
+      <span>≈ ${data.buyPrice && ((data.buyPrice.value/12000)/100).toFixed(2)} </span>
     </div>
     </div>
    <div className={s.span}>
@@ -65,13 +84,13 @@ useEffect(()=>{
 <hr style={{marginBottom:'20px',marginTop:"10px",color:"rgba(128, 128, 128, 0.411)",opacity:'0.3',boxShadow:'0px 0px 3px'}}/>
 <div className={s.input}>
 <label htmlFor="">Ваше имя</label><br />
-<input type="text" placeholder='имя'/>
+<input type="text" className='imya' placeholder='имя'/>
 </div>
 <div className={s.input}>
 <label htmlFor="">Hомер телефона</label><br />
-<input type="text" placeholder='+998'/>
+<input type="text" className='nomer' placeholder='+998'/>
 </div>
-   <button>Заказать</button>
+   <button onClick={()=>{sendmessage()}}>Заказать</button>
 </div>
 </div>
 
@@ -79,6 +98,7 @@ useEffect(()=>{
 
 
     </div>
+
         <Footer/>
     </div>
   )

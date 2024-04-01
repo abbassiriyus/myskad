@@ -81,10 +81,12 @@ var [carousel_image,setCarousel_image]=useState([{}])
 function getCarousel() {
   axios.get(`${url()}/api/carousel`).then(res=>{
 setCarousel_image(res.data)
+setLoading(false)
   }).catch(err=>{
 
   })
 }
+var [loading,setLoading]=useState(true)
 useEffect(()=>{
 getData(5)
 getCategory()
@@ -93,8 +95,10 @@ getbestSeller(5)
 gettopTovar(5)
 },[])
 
-  return (
-    <div>
+  return (<>
+ {loading?(<div className="loading_body">
+ <div class="loader"></div></div>):(   <div>
+   
       <NavbarHome />
       <Swiper navigation={{
         prevEl: '.swiper-button-prev',
@@ -126,11 +130,11 @@ gettopTovar(5)
         <h4>Популярные</h4>
         <div class={s.cards}>
         {topTovar.map((item,key)=>{
-            return <div class={s.card} >
-            <div class={s.img} style={(item.images.rows).length>0?{background: `url(${item.images.rows[0].miniature.downloadHref})`, backgroundSize: 'cover', backgroundPosition: 'center'}:{background: 'url(https://t4.ftcdn.net/jpg/04/73/25/49/360_F_473254957_bxG9yf4ly7OBO5I0O5KABlN930GwaMQz.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
-            <div className={s.ss}> <h5>{item.name}</h5>
-              <h3>{item.buyPrice && item.buyPrice.value} сум</h3>
-              <div onClick={()=>window.location=`/oneproduct/${item.id}`} class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus  className={s.h1} /></div>
+            return <div class={s.card} style={{cursor:"pointer"}} onClick={()=>window.location=`/oneproduct/${item.id}`} >
+            <div class={s.img} onClick={()=>window.location=`/oneproduct/${item.id}`} style={(item.images.rows).length>0?{background: `url(${item.images.rows[0].miniature.downloadHref})`, backgroundSize: 'cover', backgroundPosition: 'center'}:{background: 'url(https://t4.ftcdn.net/jpg/04/73/25/49/360_F_473254957_bxG9yf4ly7OBO5I0O5KABlN930GwaMQz.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
+            <div style={{cursor:"pointer"}} onClick={()=>window.location=`/oneproduct/${item.id}`} className={s.ss}> <h5>{item.name}</h5>
+              <h3  style={{cursor:"pointer"}}  onClick={()=>window.location=`/oneproduct/${item.id}`}>{item.buyPrice && item.buyPrice.value/100} сум</h3>
+              <div onClick={()=>window.location=`/oneproduct/${item.id}`} style={{cursor:"pointer"}} class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus  className={s.h1} /></div>
             </div>
           </div>
           })}
@@ -141,11 +145,11 @@ gettopTovar(5)
         <h4>Бестселлеры</h4>
         <div class={s.cards}>
         {bestSeller.map((item,key)=>{
-            return <div class={s.card} >
-            <div class={s.img} style={(item.images.rows).length>0?{background: `url(${item.images.rows[0].miniature.downloadHref})`, backgroundSize: 'cover', backgroundPosition: 'center'}:{background: 'url(https://t4.ftcdn.net/jpg/04/73/25/49/360_F_473254957_bxG9yf4ly7OBO5I0O5KABlN930GwaMQz.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
-            <div className={s.ss}> <h5>{item.name}</h5>
-              <h3>{item.buyPrice && item.buyPrice.value} сум</h3>
-              <div onClick={()=>window.location=`/oneproduct/${item.id}`} class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus  className={s.h1} /></div>
+            return <div class={s.card} style={{cursor:"pointer"}} onClick={()=>window.location=`/oneproduct/${item.id}`} >
+            <div class={s.img} onClick={()=>window.location=`/oneproduct/${item.id}`} style={(item.images.rows).length>0?{background: `url(${item.images.rows[0].miniature.downloadHref})`, backgroundSize: 'cover', backgroundPosition: 'center'}:{background: 'url(https://t4.ftcdn.net/jpg/04/73/25/49/360_F_473254957_bxG9yf4ly7OBO5I0O5KABlN930GwaMQz.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
+            <div style={{cursor:"pointer"}} onClick={()=>window.location=`/oneproduct/${item.id}`} className={s.ss}> <h5>{item.name}</h5>
+              <h3 style={{cursor:"pointer"}} onClick={()=>window.location=`/oneproduct/${item.id}`}>{item.buyPrice && item.buyPrice.value/100} сум</h3>
+              <div style={{cursor:"pointer"}} onClick={()=>window.location=`/oneproduct/${item.id}`} class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus  className={s.h1} /></div>
             </div>
           </div>
           })}
@@ -155,17 +159,17 @@ gettopTovar(5)
         <h4>Новинки</h4>
         <div class={s.cards}>
       {data.map((item,key)=>{
-            return <div class={s.card} >
-            <div class={s.img} style={(item.images.rows).length>0?{background: `url(${item.images.rows[0].miniature.downloadHref})`, backgroundSize: 'cover', backgroundPosition: 'center'}:{background: 'url(https://t4.ftcdn.net/jpg/04/73/25/49/360_F_473254957_bxG9yf4ly7OBO5I0O5KABlN930GwaMQz.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
-            <div className={s.ss}> <h5>{item.name}</h5>
-              <h3>{item.buyPrice.value} сум</h3>
-              <div onClick={()=>window.location=`/oneproduct/${item.id}`} class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus  className={s.h1} /></div>
+            return <div class={s.card} style={{cursor:"pointer"}} onClick={()=>window.location=`/oneproduct/${item.id}`} >
+            <div class={s.img} onClick={()=>window.location=`/oneproduct/${item.id}`} style={(item.images.rows).length>0?{background: `url(${item.images.rows[0].miniature.downloadHref})`, backgroundSize: 'cover', backgroundPosition: 'center'}:{background: 'url(https://t4.ftcdn.net/jpg/04/73/25/49/360_F_473254957_bxG9yf4ly7OBO5I0O5KABlN930GwaMQz.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
+            <div style={{cursor:"pointer"}} onClick={()=>window.location=`/oneproduct/${item.id}`} className={s.ss}> <h5>{item.name}</h5>
+              <h3 style={{cursor:"pointer"}} onClick={()=>window.location=`/oneproduct/${item.id}`}>{item.buyPrice.value/100} сум</h3>
+              <div style={{cursor:"pointer"}} onClick={()=>window.location=`/oneproduct/${item.id}`} class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus  className={s.h1} /></div>
             </div>
           </div>
           })}
         </div>
       </main>
       <Footer/>
-    </div>
+    </div>)}</>
   )
 }

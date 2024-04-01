@@ -42,7 +42,7 @@ useEffect(()=>{
       <h3>Menu</h3>
     <a href="/about/"><li>О компании</li></a>
     
-    <a href=""><li>Документов</li></a>
+    <a href="#"><li>Документов</li></a>
     <a href="/contact/"><li>Контакты</li></a>
      
      </ul>
