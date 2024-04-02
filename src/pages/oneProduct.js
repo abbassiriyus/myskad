@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { FaCheck } from "react-icons/fa";
 import img from "../img/noutbuk.png"
 export default function oneProduct() {
+  
   return (
     <div>
         <Navbar/>

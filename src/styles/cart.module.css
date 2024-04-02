@@ -39,7 +39,7 @@
 
 .about{
     font-family: "Manrope", sans-serif;
-
+    
 }
 .price{
     display: flex;
@@ -176,7 +176,7 @@
 @media (max-width:550px) {
     .cart{
         display: flex;
-        align-items: end;
+        align-items: center;
         margin-bottom: 20px;
         justify-content: space-around;
         flex-wrap: wrap;
@@ -185,7 +185,7 @@
 @media (max-width:520px) {
     .cart{
         display: flex;
-        align-items: end;
+        align-items: center;
         margin-bottom: 20px;
         justify-content: space-around;
         flex-wrap: wrap;
@@ -197,7 +197,7 @@
 .cart{
     display: flex;
     flex-wrap: wrap;
-    align-items: end;
+    align-items: center;
     width: 95%;
     margin-bottom: 20px;
     font-family: "Manrope", sans-serif;
@@ -251,4 +251,30 @@
     background-color: red;
     color: white;
     font-size: 25px;
+}
+.contact_sayt{
+    width: 90%;
+    max-width: 1400px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 90px;
+}
+.page_road{
+    background-color: rgba(255, 0, 0, 0.116);
+    padding: 5px;
+    margin-bottom: 30px;
+    display: flex;
+    font-family: "Manrope", sans- serif;
+    justify-content: start;
+    font-size: 14px;
+    min-height: 100px;
+    
+}
+.span_p{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    max-width: 1400px;
+    align-items: end;
 }

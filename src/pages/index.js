@@ -37,9 +37,8 @@ console.log(err);
 var[buy,setBuy]=useState([])
 useEffect(()=>{
 if(localStorage.getItem('buy')){
-  setBuy(localStorage.getItem('buy'))
-
-}
+  setBuy(JSON.parse( localStorage.getItem('buy'))
+)}
 else{
   setBuy([])
 }
@@ -48,12 +47,24 @@ function buytovar(tovar) {
   var databuy={
     count:1,
     name:tovar.name,
-    tovar:tovar.id,
+    id:tovar.id,
     code:tovar.code,
     price:tovar.buyPrice.value,
     image:tovar.images.rows[0].miniature.downloadHref,
   }
-console.log(databuy)
+  var a=buy
+  var qosh=true
+a.map((item,key)=>{
+  if(item.id==tovar.id){
+    qosh=false
+    a[key].count++
+  }
+})
+if(qosh){
+a.push(databuy)
+}
+console.log(a);
+localStorage.setItem("buy",JSON.stringify(a))
 }
 
 function getbestSeller(id) {
@@ -153,7 +164,7 @@ gettopTovar(5)
         <h4>Категории</h4>
         <div className={s.cards}>
        {category.map((item,key)=>{
-         return <div className={s.card} key={key} >
+         return <div className={s.card} key={key}  onClick={()=>window.location=`/products/${item.id}`}>
             <div class={s.img} style={{ background: `url(${item.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
             <h5 className={s.title}>{item.category_title}</h5>
           </div>
@@ -168,7 +179,7 @@ gettopTovar(5)
         {topTovar.map((item,key)=>{
             return <div class={s.card} style={{cursor:"pointer"}}  >
             <div class={s.img} onClick={()=>window.location=`/oneproduct/${item.id}`} style={(item.images.rows).length>0?{background: `url(${item.images.rows[0].miniature.downloadHref})`, backgroundSize: 'cover', backgroundPosition: 'center'}:{background: 'url(https://t4.ftcdn.net/jpg/04/73/25/49/360_F_473254957_bxG9yf4ly7OBO5I0O5KABlN930GwaMQz.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
-            <div style={{cursor:"pointer"}} onClick={()=>window.location=`/oneproduct/${item.id}`} className={s.ss}> <h5>{item.name}</h5>
+            <div style={{cursor:"pointer"}}  className={s.ss}> <h5 onClick={()=>window.location=`/oneproduct/${item.id}`}>{item.name}</h5>
               <h3  style={{cursor:"pointer"}}  onClick={()=>window.location=`/oneproduct/${item.id}`}>{item.buyPrice && item.buyPrice.value/100} сум</h3>
               <div onClick={()=>buytovar(item)} style={{cursor:"pointer"}} class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus  className={s.h1} /></div>
             </div>
@@ -183,9 +194,9 @@ gettopTovar(5)
         {bestSeller.map((item,key)=>{
             return <div class={s.card} style={{cursor:"pointer"}} >
             <div class={s.img} onClick={()=>window.location=`/oneproduct/${item.id}`} style={(item.images.rows).length>0?{background: `url(${item.images.rows[0].miniature.downloadHref})`, backgroundSize: 'cover', backgroundPosition: 'center'}:{background: 'url(https://t4.ftcdn.net/jpg/04/73/25/49/360_F_473254957_bxG9yf4ly7OBO5I0O5KABlN930GwaMQz.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
-            <div style={{cursor:"pointer"}} onClick={()=>window.location=`/oneproduct/${item.id}`} className={s.ss}> <h5>{item.name}</h5>
+            <div style={{cursor:"pointer"}} className={s.ss}> <h5 onClick={()=>window.location=`/oneproduct/${item.id}`}>{item.name}</h5>
               <h3 style={{cursor:"pointer"}} onClick={()=>window.location=`/oneproduct/${item.id}`}>{item.buyPrice && item.buyPrice.value/100} сум</h3>
-              <div style={{cursor:"pointer"}} onClick={()=>buydata(item)} class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus  className={s.h1} /></div>
+              <div style={{cursor:"pointer"}} onClick={()=>buytovar(item)} class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus  className={s.h1} /></div>
             </div>
           </div>
           })}
@@ -197,7 +208,7 @@ gettopTovar(5)
       {data.map((item,key)=>{
             return <div class={s.card} style={{cursor:"pointer"}} >
             <div class={s.img} onClick={()=>window.location=`/oneproduct/${item.id}`} style={(item.images.rows).length>0?{background: `url(${item.images.rows[0].miniature.downloadHref})`, backgroundSize: 'cover', backgroundPosition: 'center'}:{background: 'url(https://t4.ftcdn.net/jpg/04/73/25/49/360_F_473254957_bxG9yf4ly7OBO5I0O5KABlN930GwaMQz.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
-            <div style={{cursor:"pointer"}} onClick={()=>window.location=`/oneproduct/${item.id}`} className={s.ss}> <h5>{item.name}</h5>
+            <div style={{cursor:"pointer"}}   className={s.ss}> <h5 onClick={()=>window.location=`/oneproduct/${item.id}`}>{item.name}</h5>
               <h3 style={{cursor:"pointer"}} onClick={()=>window.location=`/oneproduct/${item.id}`}>{item.buyPrice.value/100} сум</h3>
               <div style={{cursor:"pointer"}} onClick={()=>buytovar(item)} class={s.karzinka1}><MdAddShoppingCart className={s.p} /><FaPlus  className={s.h1} /></div>
             </div>

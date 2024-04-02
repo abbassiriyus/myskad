@@ -72,7 +72,7 @@ getCompany()
 <img onClick={()=>{window.location="/"}} src={company[0].image} className={n.logo} />
 </div>
 <div className={n.input_search}>
-    <input id='seach_data' defaultValue={localStorage.getItem("search")}  onKeyUp={(e)=>{PasteSearch(e)}} placeholder='Найти товары' type="text" />
+    <input id='seach_data'  placeholder='Найти товары' type="text" />
     <div className={n.search_icons}>
     <div className={n.search_page}>
     <IoCloseSharp style={{display:'none'}} className='sharp'  />
@@ -81,7 +81,7 @@ getCompany()
    
 </div>
 <div className={n.all_contact}>
-<MdOutlineShoppingCart className={n.icons} />
+<MdOutlineShoppingCart onClick={()=>window.location='/cart/'} className={n.icons} />
 <div className={n.contact}>
 <BiWorld className={n.icons} />
 <select name="" id="">

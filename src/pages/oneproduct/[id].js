@@ -37,6 +37,39 @@ sendMessage+="product:"+data.name+`%0A`
 }
 
 
+var[buy,setBuy]=useState([])
+useEffect(()=>{
+if(localStorage.getItem('buy')){
+  setBuy(JSON.parse( localStorage.getItem('buy'))
+)}
+else{
+  setBuy([])
+}
+},[])
+function buytovar(tovar) {
+  var databuy={
+    count:1,
+    name:tovar.name,
+    id:tovar.id,
+    code:tovar.code,
+    price:tovar.buyPrice.value,
+    image:tovar.images.rows[0].miniature.downloadHref,
+  }
+  var a=buy
+  var qosh=true
+a.map((item,key)=>{
+  if(item.id==tovar.id){
+    qosh=false
+    a[key].count++
+  }
+})
+if(qosh){
+a.push(databuy)
+}
+console.log(a);
+localStorage.setItem("buy",JSON.stringify(a))
+}
+
 
 useEffect(()=>{
         console.log(router.query.id);
@@ -77,7 +110,7 @@ useEffect(()=>{
       </div>
     </div>
    </div>
-   <button>Добавить в корзину</button>
+   <button onClick={()=>{buytovar(data)}}>Добавить в корзину</button>
 </div>
 <div className={s.price_big}>
 <h3>Заказать</h3>
