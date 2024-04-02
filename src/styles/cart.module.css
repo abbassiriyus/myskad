@@ -200,7 +200,15 @@
     align-items: end;
     width: 95%;
     margin-bottom: 20px;
+    font-family: "Manrope", sans-serif;
+    margin-top: 10px;
     justify-content: space-around;
+}
+.orderh2{
+    width: 78%;
+    margin: auto;
+    font-family: "Manrope", sans-serif;
+    margin-top: 20px;
 }
 .cart .image1 {
     width: 120px;

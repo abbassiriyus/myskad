@@ -10,7 +10,7 @@ import { RiDeleteBin5Fill } from "react-icons/ri";
 export default function oneProduct() {
   return (
     <div>
-        <Navbar/> <h2>Заказ в ORZUTECH</h2>
+        <Navbar/> <h2  className={s.orderh2}>Заказ в ORZUTECH</h2>
     <div className={s.body}>
        
     <div className={s.about}>
@@ -34,6 +34,29 @@ export default function oneProduct() {
 </div>
 </div>
 </div>
+
+<hr style={{marginBottom:'20px',marginTop:"20px",color:"rgba(128, 128, 128, 0.411)",opacity:'0.3',boxShadow:'0px 0px 3px',width:'80%',margin:'auto'}}/>
+<div className={s.cart}>
+ <div className={s.order1}>
+ <Image className={s.image1} src={img1} alt="" />
+    <div className={s.price2}>
+        <span>TP-Link UE300C</span>
+        <p style={{fontSize:'13px'}}>1599</p>
+        <span><strong>270 000,00</strong>₽/шт</span>
+        <p style={{fontSize:'13px'}}>270 000,00 ₽</p>
+    </div>
+ </div>
+<div></div>
+<div className={s.delete1}>
+<RiDeleteBin5Fill  style={{color:'red',fontSize:'30px'}}/>
+<div className={s.plus_minus}>
+    <button className={s.minus}>-</button>
+    <span>1</span>
+   <button className={s.plus}>+</button>
+</div>
+</div>
+</div>
+
 <hr style={{marginBottom:'20px',marginTop:"20px",color:"rgba(128, 128, 128, 0.411)",opacity:'0.3',boxShadow:'0px 0px 3px',width:'80%',margin:'auto'}}/>
     </div>
 <div className={s.order}>
