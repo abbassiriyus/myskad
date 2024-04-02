@@ -19,8 +19,8 @@ export default function index() {
   var [data,setData]=useState([])
   var [bestSeller,setBestSeller]=useState([])
   var [topTovar,setTopTovar]=useState([])
-
   var [category,setCategory]=useState([])
+
 function getData(id) {
   axios.get(`${url()}/api/product?limit=${id}`).then(res=>{
     res.data.sort((a, b) => {
@@ -42,7 +42,6 @@ function getbestSeller(id) {
       const timestampB = new Date(b.updated);
       return timestampB - timestampA;
     });
-console.log(res.data);
     setBestSeller(res.data)
   }).catch(err=>{
 console.log(err);
@@ -76,7 +75,19 @@ setCategory(res.data)
 console.log(err);
   })
 }
-
+function getImage() {
+var url='https://api.moysklad.ru/api/remap/1.2/download/28674e35-8ba6-475a-bf4c-855581fc64c9'
+  axios.get(url,{headers: {
+    "Accept":'*/*',
+    "User-Agent":'Thunder Client (https://www.thunderclient.com)',
+    'Authorization':`Basic d2ViYWJiYXM5QGdtYWlsLmNvbTp0dHVzaDEyMzNhYQ==`,
+    'Accept-Encoding':'gzip',
+  }}).then(res=>{
+console.log(res.data);
+  }).catch(err=>{
+console.log(err);
+  })
+}
 var [carousel_image,setCarousel_image]=useState([{}])
 function getCarousel() {
   axios.get(`${url()}/api/carousel`).then(res=>{
@@ -88,6 +99,7 @@ setLoading(false)
 }
 var [loading,setLoading]=useState(true)
 useEffect(()=>{
+  getImage()
 getData(5)
 getCategory()
 getCarousel()
@@ -100,6 +112,7 @@ gettopTovar(5)
  <div class="loader"></div></div>):(   <div>
    
       <NavbarHome />
+     
       <Swiper navigation={{
         prevEl: '.swiper-button-prev',
         nextEl: '.swiper-button-next'

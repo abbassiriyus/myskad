@@ -12,6 +12,7 @@ import logo from "../image/logo.png"
 import axios from 'axios';
 import url from "./host.js"
 
+import { IoCloseSharp } from "react-icons/io5";
 export default function NavbarHome() {
   var [category,setCategory]=useState([])
 var [company,setCompany]=useState([{}])
@@ -23,13 +24,24 @@ function getCompany(){
     }
   })
 }
-
+function seachData(){
+var data=document.querySelector("#seach_data").value;
+window.location=`/products/${category[0].id}/`;
+localStorage.setItem("search", data);
+}
   function getCategory(){
     axios.get(`${url()}/api/category`).then(res=>{
   setCategory(res.data)
     }).catch(err=>{
   console.log(err);
     })
+  }
+  function PasteSearch(e) {
+   if((e.target.value).length==0){
+    document.querySelector(".sharp").style="display:none"
+   }else{
+    document.querySelector(".sharp").style="display:block"
+   }
   }
   useEffect(()=>{
 getCategory()
@@ -60,17 +72,20 @@ getCompany()
 <img onClick={()=>{window.location="/"}} src={company[0].image} className={n.logo} />
 </div>
 <div className={n.input_search}>
-    <input placeholder='Найти товары' type="text" />
+    <input id='seach_data' defaultValue={localStorage.getItem("search")}  onKeyUp={(e)=>{PasteSearch(e)}} placeholder='Найти товары' type="text" />
     <div className={n.search_icons}>
-    <IoMdSearch  />
+    <div className={n.search_page}>
+    <IoCloseSharp style={{display:'none'}} className='sharp'  />
+    </div><IoMdSearch onClick={()=>{seachData()}}  />
     </div>
+   
 </div>
 <div className={n.all_contact}>
 <MdOutlineShoppingCart className={n.icons} />
 <div className={n.contact}>
 <BiWorld className={n.icons} />
 <select name="" id="">
-    <option value="">Русский</option>
+    {/* <option value="">Русский</option> */}
     <option value="">Русский</option>
  </select>
 
