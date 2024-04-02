@@ -8,7 +8,7 @@ import axios from 'axios'
 import url from "../host.js"
 import { useRouter } from 'next/router'
 export default function oneProduct() {
-
+var [data2,setData2]=useState(12000)
     var router=useRouter()
     var [data,setData]=useState({})
 function getProduct(id) {
@@ -18,9 +18,15 @@ function getProduct(id) {
 
     })
 }
-
+function getData2() {
+  axios.get(`${url()}/api/dolor_course`).then(res=>{
+    if(res.data.length>0){
+      setData2(res.data[0].dollor)
+    }
+  })
+ }
 var sendmessage=()=>{
-  var sendMessage=""
+  var sendMessage="Yangi buyurtma bitta" +`%0A`
   sendMessage+="ismi:"+document.querySelector('.imya').value+`%0A`
   sendMessage+="nomer:"+document.querySelector('.nomer').value+`%0A`
   sendMessage+="id:"+data.id+`%0A` 
@@ -75,6 +81,7 @@ useEffect(()=>{
         console.log(router.query.id);
         if(router.query.id){
            getProduct(router.query.id)
+           getData2()
         }
     },[router])
   return (
@@ -97,7 +104,7 @@ useEffect(()=>{
 <div className={s.price}>
     <h3>{data.buyPrice && data.buyPrice.value/100} сум</h3>
     <div className={s.price_back}>
-      <span>≈ ${data.buyPrice && ((data.buyPrice.value/12000)/100).toFixed(2)} </span>
+      <span>≈ ${data.buyPrice && ((data.buyPrice.value/data2)/100).toFixed(2)} </span>
     </div>
     </div>
    <div className={s.span}>

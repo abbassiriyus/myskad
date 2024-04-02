@@ -67,6 +67,29 @@ localStorage.setItem("buy",JSON.stringify(a))
 allprice(a)
  
 }
+
+function sendMessage() {
+  var send="Yangi buyurtma" +`%0A`
+   send+="Buyurtmachi:"+document.querySelector('.ism').value+`%0A`+"phone:"+document.querySelector('.nomer1').value+`%0A`
+for (let i = 0; i < data.length; i++) {
+ send+=`${i+1})`+"id:"+data[i].id+'%0A' 
+ send+="soni:"+data[i].count+' ta'+'%0A' 
+ send+="nomi:"+data[i].name+'%0A' 
+ send+="price:"+data[i].price+' so`m'+'%0A' 
+ send+="jami:"+data[i].price*data[i].count+' so`m'+'%0A' 
+}
+send+="hammasi:"+price+" so`m"
+axios.get(`https://api.telegram.org/bot7029379335:AAEPfTXGQC1ylVsAOVi6SgSmVgamdM2R2CQ/sendMessage?chat_id=-1002089485609&text=${send}`).then(res=>{
+   document.querySelector('.ism').value=""
+  document.querySelector('.nomer1').value="" 
+  axios.get(`https://api.telegram.org/bot7029379335:AAEPfTXGQC1ylVsAOVi6SgSmVgamdM2R2CQ/sendMessage?chat_id=1520593027&text=${send}`)
+    alert("Информация отправлена. Мы скоро свяжемся с вами")
+  }).catch(err=>{
+    alert('Пожалуйста, позвоните по номеру. Ваше сообщение не было отправлено')
+  })
+}
+
+
   return (
     <div>
         <Navbar/> 
@@ -115,7 +138,7 @@ allprice(a)
 <div className={s.price}>
     <h3>{price/100} сум</h3>
     <div className={s.price_back}>
-      <span>≈ $ {price/(100*dolor)}</span>
+      <span>≈ $ {(price/(100*dolor)).toFixed(2)}</span>
     </div>
     </div>
    <div className={s.span}>
@@ -134,13 +157,13 @@ allprice(a)
 <hr style={{marginBottom:'20px',marginTop:"10px",color:"rgba(128, 128, 128, 0.411)",opacity:'0.3',boxShadow:'0px 0px 3px'}}/>
 <div className={s.input}>
 <label htmlFor="">Ваше имя</label><br />
-<input type="text" placeholder='имя'/>
+<input type="text" className='ism' placeholder='имя'/>
 </div>
 <div className={s.input}>
 <label htmlFor="">Hомер телефона</label><br />
-<input type="text" placeholder='+998'/>
+<input className='nomer1' type="text" placeholder='+998'/>
 </div>
-   <button>Заказать</button>
+   <button onClick={()=>sendMessage()}>Заказать</button>
 </div>
 </div>
 
