@@ -1,0 +1,175 @@
+.body{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns:2fr 2fr 1.5fr;
+    max-width: 1400px;
+    align-items: start;
+    margin-top: 70px;    
+    gap: 20px;
+}
+.image{
+    /* width: 95%; */
+    background-size: cover !important;
+    background-position: center !important;
+    width: 90%;
+    background-size: 100% 100%;
+    height: 500px;
+    margin: auto;
+    border: 1px solid rgba(128, 128, 128, 0.192);
+
+}
+@media(max-width:791px){
+    .image{
+        /* width: 95%; */
+        background-size: cover !important;
+        background-position: center !important;
+        width: 90%;
+        background-size: 100% 100%;
+        height: 300px;
+        margin: auto;
+        border: 1px solid rgba(128, 128, 128, 0.192);
+    
+    }
+}
+
+.image img{
+    width: 100%;
+}
+
+.about{
+    font-family: "Manrope", sans-serif;
+
+}
+.price{
+    display: flex;
+    align-items: center;
+    font-family: "Manrope", sans-serif;
+    font-weight: 900;
+    justify-content: space-between;
+}
+.price_back{
+    background: #E8E8E6;
+    padding: 10px 10px;
+    height: 20px;
+    color: red;
+    font-weight: 900;
+    font-family: "Manrope", sans-serif;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+.price_back1{
+    background: #E8E8E6;
+    padding: 10px 10px;
+    height: 20px;
+    color: #1BC5BD;
+    
+    font-weight: 900;
+    font-family: "Manrope", sans-serif;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+.span{
+    margin-top: 20px;
+    display: flex;
+    justify-content: end;
+}
+.tick{
+    display: flex;
+    gap: 10px;
+}
+.check{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #1BC5BD;
+    border-radius: 50%;
+    width: 22px;
+}
+.price_big{
+    border: 1px solid rgba(128, 128, 128, 0.145);
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow:1px 2px 6px 2px grey;
+}
+.price_big button{
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 1px solid white;
+    background-color: red;
+    color: white;
+    font-weight: 500;
+    transition: .5s;
+}
+.price_big button:hover{
+    background-color: rgba(255, 255, 255, 0.071);
+    border: 1px solid red;
+    color: red;
+}
+
+.price_big h3{
+    text-align: center;
+    font-family: "Manrope", sans-serif;
+    color: red;
+    font-weight: 900;
+}
+.input label{
+    color: red;
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    margin-left: 10px;
+}
+.input input{
+    width: 100%;
+    margin-top: 5px;
+    height: 40px;
+    outline: none;
+    border: 1px solid navy;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+@media(max-width:1300px){
+    .body{
+        width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-columns:1.5fr 1.5fr ;
+        max-width: 1200px;
+        align-items: start;
+        margin-top: 70px;    
+        gap: 20px;
+    }
+}
+@media(max-width:1120px){
+    .body{
+        width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-columns:1.5fr 1fr;
+        max-width: 1400px;
+        align-items: start;
+        margin-top: 70px;    
+        gap: 20px;
+    }
+}
+@media(max-width:991px){
+    .body{
+        width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-columns:1fr ;
+        max-width: 650px;
+        align-items: start;
+        margin-top: 70px;    
+        gap: 20px;
+    }
+}
