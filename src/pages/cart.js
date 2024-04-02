@@ -1,35 +1,40 @@
 import React from 'react'
-import s from "../styles/oneProduct.module.css"
+import s from "../styles/cart.module.css"
 import Footer from "../pages/footer"
 import Navbar from "../pages/NavbarHome"
 import Image from 'next/image'
 import { FaCheck } from "react-icons/fa";
 import img from "../img/noutbuk.png"
+import img1 from "../image/pard.png"
+import { RiDeleteBin5Fill } from "react-icons/ri";
 export default function oneProduct() {
   return (
     <div>
-        <Navbar/>
+        <Navbar/> <h2>Заказ в ORZUTECH</h2>
     <div className={s.body}>
-  <div className={s.d}>
-  <div  className={s.image}>
-  
-  </div>
-  </div>
+       
     <div className={s.about}>
-      <h3>Ноутбук HP 15s-fq3011ur 15.6" Celeron N4500
-4Гб DDR4 256Гб SSD (3V7K5EA)</h3>
-<hr style={{marginBottom:'20px',marginTop:"10px",color:"rgba(128, 128, 128, 0.411)",opacity:'0.3',boxShadow:'0px 0px 3px'}}/>
-<strong>Краткое описание</strong>
-<p>Процессор: 2х ядерный Intel Celeron N4500
-Частота процессора: до 2.8 ГГц  
-Операционная система: FreeDOS
-Оперативная память: DDR4, 4 Гб
-Накопитель данных: SDD, 256 Гб
-Модель видеокарты: Intel UHD Graphics
-Тип видеокарты: интегрированный
-Диагональ экрана: 15.6″
-Ёмкость аккумулятора: 41 Вт.ч
-Комплект: ноутбук, адаптер питания, документация</p>
+<div className={s.cart}>
+ <div className={s.order1}>
+ <Image className={s.image1} src={img1} alt="" />
+    <div className={s.price2}>
+        <span>TP-Link UE300C</span>
+        <p style={{fontSize:'13px'}}>1599</p>
+        <span><strong>270 000,00</strong>₽/шт</span>
+        <p style={{fontSize:'13px'}}>270 000,00 ₽</p>
+    </div>
+ </div>
+<div></div>
+<div className={s.delete1}>
+<RiDeleteBin5Fill  style={{color:'red',fontSize:'30px'}}/>
+<div className={s.plus_minus}>
+    <button className={s.minus}>-</button>
+    <span>1</span>
+   <button className={s.plus}>+</button>
+</div>
+</div>
+</div>
+<hr style={{marginBottom:'20px',marginTop:"20px",color:"rgba(128, 128, 128, 0.411)",opacity:'0.3',boxShadow:'0px 0px 3px',width:'80%',margin:'auto'}}/>
     </div>
 <div className={s.order}>
 <div className={s.price_big}>
