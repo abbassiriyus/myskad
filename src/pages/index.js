@@ -11,8 +11,6 @@ import Footer from './footer';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import Image from 'next/image';
-import header_img from "../image/header_img.png"
 import axios from 'axios';
 import url from './host'
 export default function index() {

@@ -37,14 +37,21 @@ var [category,setCategory]=useState([])
     var [topTovar,setTopTovar]=useState([])
 function pagnation(id){
   setSelectpage(id)
-  axios.get(`${url()}/api/category/count/${categoryId}`).then(res2=>{
+  var searchdata=""
+  if(localStorage.getItem("search")){
+ searchdata=localStorage.getItem('search')
+  }else{
+ searchdata=""
+  }
+console.log(searchdata);
+  axios.get(`${url()}/api/category/count/${categoryId}?search=${searchdata}`).then(res2=>{
     var a12=[]
     for (let i = 0; i < (res2.data.count)/12; i++) {
   a12.push(i)
     }
     console.log(a12);
  setCount(a12)
-axios.get(`${url()}/api/category/product/${categoryId}?limit=12&offset=${(id-1)*12}`).then(res=>{
+axios.get(`${url()}/api/category/product/${categoryId}?limit=12&offset=${(id-1)*12}&search=${searchdata}`).then(res=>{
     res.data.sort((a, b) => {
       const timestampA = new Date(a.updated);
       const timestampB = new Date(b.updated);
@@ -54,6 +61,7 @@ axios.get(`${url()}/api/category/product/${categoryId}?limit=12&offset=${(id-1)*
   }).catch(err=>{
 console.log(err);
   })})
+
 }
 function nextButton() {
   if(selectpage<count.length){

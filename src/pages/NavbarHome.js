@@ -8,7 +8,6 @@ import { FaPhone } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import user_image from "../image/user_image.png"
 import toogle from "../image/toogle.png"
-import logo from "../image/logo.png"
 import axios from 'axios';
 import url from "./host.js"
 
@@ -29,6 +28,10 @@ var data=document.querySelector("#seach_data").value;
 window.location=`/products/${category[0].id}/`;
 localStorage.setItem("search", data);
 }
+var [inp,setInp]=useState(null)
+function set_data(){
+setInp(localStorage.getItem('search'))
+}
   function getCategory(){
     axios.get(`${url()}/api/category`).then(res=>{
   setCategory(res.data)
@@ -46,6 +49,7 @@ localStorage.setItem("search", data);
   useEffect(()=>{
 getCategory()
 getCompany()
+set_data()
   },[])
   return (
     <div>
@@ -72,10 +76,10 @@ getCompany()
 <img onClick={()=>{window.location="/"}} src={company[0].image} className={n.logo} />
 </div>
 <div className={n.input_search}>
-    <input id='seach_data'  placeholder='Найти товары' type="text" />
+    <input id='seach_data' defaultValue={inp}  placeholder='Найти товары' type="text" />
     <div className={n.search_icons}>
     <div className={n.search_page}>
-    <IoCloseSharp style={{display:'none'}} className='sharp'  />
+    <IoCloseSharp onClick={()=>{localStorage.clear();window.location.reload()}} style={inp?{display:'block'}:{display:'none'}} className='sharp'  />
     </div><IoMdSearch onClick={()=>{seachData()}}  />
     </div>
    
