@@ -57,6 +57,22 @@
     gap: 10px;
     height: 40px;
 }
+.shop_nu {
+    position: relative;
+}
+.shop_nu p{
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    display: flex;align-items: center;justify-content: center;
+    /* width: 15px !important; */
+    /* height: 15px !important; */
+    border-radius: 50%;
+    padding: 1px 5px;
+    font-size: 10px;
+    color: white;
+    background-color: #E91F25;
+}
 .contact{
     display: flex;
     gap: 7px;
