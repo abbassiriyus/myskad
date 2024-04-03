@@ -46,10 +46,23 @@ setInp(localStorage.getItem('search'))
     document.querySelector(".sharp").style="display:block"
    }
   }
+var [documen,setDocumen]=useState({})
+function getDocumen() {
+  axios.get(`${url()}/api/document`).then(res=>{
+if((res.data).length>0){
+setDocumen(res.data[0])
+}
+  }).catch(err=>{
+
+  })
+}
+
+
   useEffect(()=>{
 getCategory1()
 getCompany1()
 set_data1()
+getDocumen()
 if(count1){
 setShop(count1)
 }else{
@@ -78,7 +91,7 @@ setShop(JSON.parse(localStorage.getItem('buy')))
         })}
 	  		</div>
         <a href="/about/">О компании</a>
-  			<a href="#">Документы</a>
+  			<a href={documen.image}>Документы</a>
   			<a href="/contact">Контакты</a>
   		</div>
   	</div>

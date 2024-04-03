@@ -22,6 +22,16 @@ export default function oneProduct() {
  var [category,setCategory]=useState([])
  var [company,setCompany]=useState([{}])
  var [shop,setShop]=useState([])
+ var [documen,setDocumen]=useState({})
+function getDocumen() {
+  axios.get(`${url()}/api/document`).then(res=>{
+if((res.data).length>0){
+setDocumen(res.data[0])
+}
+  }).catch(err=>{
+
+  })
+}
  function getCompany1(){
    axios.get(`${url()}/api/company`).then(res=>{
      if(res.data.length>0){
@@ -54,6 +64,7 @@ export default function oneProduct() {
    }
    useEffect(()=>{
  getCategory1()
+ getDocumen()
  getCompany1()
  set_data1()
 
@@ -160,7 +171,7 @@ axios.get(`https://api.telegram.org/bot7029379335:AAEPfTXGQC1ylVsAOVi6SgSmVgamdM
         })}
 	  		</div>
         <a href="/about/">О компании</a>
-  			<a href="#">Документы</a>
+  			<a href={documen.image}>Документы</a>
   			<a href="/contact">Контакты</a>
   		</div>
   	</div>

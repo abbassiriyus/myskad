@@ -23,6 +23,7 @@ import { IoCloseSharp } from "react-icons/io5";
 import Image from 'next/image'
 
 import url from './host'
+
 export default function index() {
   var [data,setData]=useState([])
   var [bestSeller,setBestSeller]=useState([])
@@ -41,6 +42,8 @@ function getData(id) {
 console.log(err);
   })
 }
+
+
 var [category1,setCategory1]=useState([])
 var [company,setCompany]=useState([{}])
 var [shop,setShop]=useState([])
@@ -74,10 +77,21 @@ setInp(localStorage.getItem('search'))
     document.querySelector(".sharp").style="display:block"
    }
   }
+  var [documen,setDocumen]=useState({})
+function getDocumen() {
+  axios.get(`${url()}/api/document`).then(res=>{
+if((res.data).length>0){
+setDocumen(res.data[0])
+}
+  }).catch(err=>{
+
+  })
+}
   useEffect(()=>{
 getCategory1()
 getCompany1()
 set_data1()
+getDocumen()
 
   if(localStorage.getItem('buy')){
 setShop(JSON.parse(localStorage.getItem('buy')))
@@ -214,7 +228,7 @@ gettopTovar(5)
         })}
 	  		</div>
         <a href="/about/">О компании</a>
-  			<a href="#">Документы</a>
+  			<a href={documen.image}>Документы</a>
   			<a href="/contact">Контакты</a>
   		</div>
   	</div>

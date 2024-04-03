@@ -22,8 +22,19 @@ function getCompany(){
     }
   })
 }
+var [documen,setDocumen]=useState({})
+function getDocumen() {
+  axios.get(`${url()}/api/document`).then(res=>{
+if((res.data).length>0){
+setDocumen(res.data[0])
+}
+  }).catch(err=>{
+
+  })
+}
 useEffect(()=>{
   getCompany()
+  getDocumen()
 },[])
 
 
@@ -42,7 +53,7 @@ useEffect(()=>{
       <h3>Menu</h3>
     <a href="/about/"><li>О компании</li></a>
     
-    <a href="#"><li>Документов</li></a>
+    <a href={documen.image}><li>Документов</li></a>
     <a href="/contact/"><li>Контакты</li></a>
      
      </ul>

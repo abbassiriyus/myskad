@@ -96,9 +96,19 @@ pagnation(selectpage+1)
 setSelectpage(selectpage+1)
   }
 }
+var [documen,setDocumen]=useState({})
+function getDocumen() {
+  axios.get(`${url()}/api/document`).then(res=>{
+if((res.data).length>0){
+setDocumen(res.data[0])
+}
+  }).catch(err=>{
 
+  })
+}
 var[buy,setBuy]=useState([])
 useEffect(()=>{
+  getDocumen()
 if(localStorage.getItem('buy')){
   setBuy(JSON.parse( localStorage.getItem('buy'))
   )
@@ -232,7 +242,7 @@ var [loading,setLoading]=useState(true)
         })}
 	  		</div>
         <a href="/about/">О компании</a>
-  			<a href="#">Документы</a>
+  			<a href={documen.image}>Документы</a>
   			<a href="/contact">Контакты</a>
   		</div>
   	</div>
