@@ -137,25 +137,13 @@ console.log(a);
 localStorage.setItem("buy",JSON.stringify(a))
 }
 
-function getImage() {
-  var url='https://api.moysklad.ru/api/remap/1.2/download/0ea35c91-876c-4a39-be79-a53ab86af22a/'
-  axios.get(`${url}`,{ headers: {
-    // 'Authorization':`Bearer d2ViYWJiYXM5QGdtYWlsLmNvbTp0dHVzaDEyMzNhYQ==`,
-    'Accept-Encoding':'gzip',
-    'access_token' :'aa147de1c69de3e42a83e0c7181dc734686dac62'
-  }}).then(res=>{
-    document.querySelector('#image').value=res.data
-  }).catch(err=>{
-    console.log(err);
-  })
-}
 
 useEffect(()=>{
         console.log(router.query.id);
         if(router.query.id){
            getProduct(router.query.id)
            getData2()
-           getImage()
+      
         }
     },[router])
   return (
@@ -212,7 +200,7 @@ useEffect(()=>{
   	
     <div className={s.body}>
   <div className={s.d}>
-  <div  className={s.image} id='image' style={data.images && (data.images.rows).length>0?{background: `url(${data.images.rows[0].miniature.downloadHref})`, backgroundSize: 'cover', backgroundPosition: 'center'}:{background: 'url(https://t4.ftcdn.net/jpg/04/73/25/49/360_F_473254957_bxG9yf4ly7OBO5I0O5KABlN930GwaMQz.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+  <div  className={s.image} id='image' style={data.images && (data.images.rows).length>0?{background: `url(https://mysklad-back-1.onrender.com/api/getimage?url=${data.images.rows[0].meta.downloadHref})`, backgroundSize: 'cover', backgroundPosition: 'center'}:{background: 'url(https://t4.ftcdn.net/jpg/04/73/25/49/360_F_473254957_bxG9yf4ly7OBO5I0O5KABlN930GwaMQz.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
   
   </div>
   </div>
